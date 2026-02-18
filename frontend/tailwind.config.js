@@ -5,12 +5,12 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'neon-green': '#39FF14',
-        'neon-green-hover': '#32D711',
-        'neon-green-dim': 'rgba(57, 255, 20, 0.1)',
-        'gold': '#D4AF37',
-        'gold-light': '#F1C40F',
-        'gold-dim': 'rgba(212, 175, 55, 0.1)',
+        'brand-yellow': '#FDB913',
+        'brand-yellow-light': '#FFD700',
+        'brand-yellow-dim': 'rgba(253, 185, 19, 0.1)',
+        'brand-green': '#00C853',
+        'brand-green-light': '#4CAF50',
+        'brand-green-dim': 'rgba(0, 200, 83, 0.1)',
         'deep-black': '#050505',
         'charcoal': '#0A0A0A',
         'subtle-black': '#121212',
@@ -21,13 +21,13 @@ module.exports = {
         'mono': ['JetBrains Mono', 'monospace'],
       },
       animation: {
-        'fade-up': 'fadeUp 0.6s ease-out',
+        'fade-up': 'fadeUp 0.5s ease-out',
         'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
         'shimmer': 'shimmer 2s linear infinite',
       },
       keyframes: {
         fadeUp: {
-          '0%': { opacity: '0', transform: 'translateY(30px)' },
+          '0%': { opacity: '0', transform: 'translateY(20px)' },
           '100%': { opacity: '1', transform: 'translateY(0)' },
         },
         shimmer: {

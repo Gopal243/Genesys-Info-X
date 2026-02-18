@@ -1,19 +1,19 @@
 import { useEffect, useRef, useState } from 'react';
 import './App.css';
 import { motion, useInView } from 'framer-motion';
-import Lenis from '@studio-freight/lenis';
 import axios from 'axios';
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 const API = `${BACKEND_URL}/api`;
+const LOGO_URL = 'https://customer-assets.emergentagent.com/job_web-creator-768/artifacts/925qpowk_IMG_9976.jpg';
 
-// Animation variants
+// Animation variants - simplified for better performance
 const fadeUpVariant = {
-  hidden: { opacity: 0, y: 50 },
+  hidden: { opacity: 0, y: 30 },
   visible: { 
     opacity: 1, 
     y: 0,
-    transition: { duration: 0.6, ease: 'easeOut' }
+    transition: { duration: 0.5, ease: 'easeOut' }
   }
 };
 
@@ -22,7 +22,7 @@ const staggerContainer = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.15
+      staggerChildren: 0.12
     }
   }
 };
@@ -32,23 +32,11 @@ function App() {
   const [message, setMessage] = useState('');
   const [submitStatus, setSubmitStatus] = useState('');
 
-  // Initialize Lenis smooth scroll
+  // Use native smooth scroll instead of Lenis for better performance
   useEffect(() => {
-    const lenis = new Lenis({
-      duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      smoothWheel: true,
-    });
-
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-
-    requestAnimationFrame(raf);
-
+    document.documentElement.style.scrollBehavior = 'smooth';
     return () => {
-      lenis.destroy();
+      document.documentElement.style.scrollBehavior = 'auto';
     };
   }, []);
 
@@ -72,7 +60,7 @@ function App() {
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   };
 
@@ -80,15 +68,14 @@ function App() {
     <div className="bg-deep-black text-white font-body overflow-x-hidden">
       {/* Navigation */}
       <nav className="fixed top-0 w-full z-50 glass-panel" data-testid="main-nav">
-        <div className="max-w-[1400px] mx-auto px-6 md:px-12 py-6 flex justify-between items-center">
-          <div className="font-heading text-2xl font-bold" data-testid="nav-logo">
-            <span className="text-white">GENESYS</span>
-            <span className="text-neon-green"> INFO X</span>
+        <div className="max-w-[1400px] mx-auto px-6 md:px-12 py-4 flex justify-between items-center">
+          <div className="" data-testid="nav-logo">
+            <img src={LOGO_URL} alt="Genesys Info X" className="logo-image" />
           </div>
           <div className="hidden md:flex gap-8 items-center">
-            <button onClick={() => scrollToSection('services')} className="text-gray-300 hover:text-neon-green transition-colors text-sm uppercase tracking-widest" data-testid="nav-services">Services</button>
-            <button onClick={() => scrollToSection('ecosystem')} className="text-gray-300 hover:text-neon-green transition-colors text-sm uppercase tracking-widest" data-testid="nav-ecosystem">Ecosystem</button>
-            <button onClick={() => scrollToSection('careers')} className="text-gray-300 hover:text-neon-green transition-colors text-sm uppercase tracking-widest" data-testid="nav-careers">Careers</button>
+            <button onClick={() => scrollToSection('services')} className="text-gray-300 hover:text-brand-yellow transition-colors text-sm uppercase tracking-widest" data-testid="nav-services">Services</button>
+            <button onClick={() => scrollToSection('ecosystem')} className="text-gray-300 hover:text-brand-yellow transition-colors text-sm uppercase tracking-widest" data-testid="nav-ecosystem">Ecosystem</button>
+            <button onClick={() => scrollToSection('careers')} className="text-gray-300 hover:text-brand-yellow transition-colors text-sm uppercase tracking-widest" data-testid="nav-careers">Careers</button>
             <button onClick={() => scrollToSection('contact')} className="btn-primary" data-testid="nav-contact-btn">Contact Us</button>
           </div>
         </div>
@@ -114,14 +101,14 @@ function App() {
             className="text-center max-w-5xl mx-auto"
           >
             <motion.div variants={fadeUpVariant} className="mb-6" data-testid="hero-label">
-              <span className="text-xs font-mono uppercase tracking-[0.2em] text-neon-green">Global Technology Ecosystem</span>
+              <span className="text-xs font-mono uppercase tracking-[0.2em] text-brand-green">Global Technology Ecosystem</span>
             </motion.div>
             <motion.h1 
               variants={fadeUpVariant}
               className="font-heading text-6xl md:text-8xl font-bold tracking-tighter leading-none mb-8"
               data-testid="hero-headline"
             >
-              Engineering the <span className="text-neon-green">Future</span><br />
+              Engineering the <span className="text-brand-yellow">Future</span><br />
               Through AI, Cloud & Innovation
             </motion.h1>
             <motion.p 
@@ -144,7 +131,7 @@ function App() {
         <div className="max-w-[1400px] mx-auto px-6 md:px-12">
           <AnimatedSection>
             <div className="text-center mb-20">
-              <span className="text-xs font-mono uppercase tracking-[0.2em] text-gold mb-4 block" data-testid="about-label">Who We Are</span>
+              <span className="text-xs font-mono uppercase tracking-[0.2em] text-brand-yellow mb-4 block" data-testid="about-label">Who We Are</span>
               <h2 className="font-heading text-4xl md:text-6xl font-semibold tracking-tight mb-6" data-testid="about-title">Global Innovation Ecosystem</h2>
               <div className="gold-divider my-8 max-w-md mx-auto"></div>
             </div>
@@ -171,7 +158,7 @@ function App() {
             <AnimatedSection>
               <div className="glass-panel p-12 rounded-none">
                 <p className="text-gray-300 text-lg leading-relaxed mb-6" data-testid="about-description">
-                  Genesys Info X operates as a <span className="text-neon-green font-semibold">global technology ecosystem</span>, partnering with education platforms, government bodies, and industry leaders to deliver cutting-edge solutions.
+                  Genesys Info X operates as a <span className="text-brand-yellow font-semibold">global technology ecosystem</span>, partnering with education platforms, government bodies, and industry leaders to deliver cutting-edge solutions.
                 </p>
                 <p className="text-gray-400 leading-relaxed">
                   Our collaboration extends to workforce transformation, where we empower the next generation of technologists through intensive internship programs, real-world projects, and industry certifications.
@@ -187,7 +174,7 @@ function App() {
         <div className="max-w-[1400px] mx-auto px-6 md:px-12">
           <AnimatedSection>
             <div className="text-center mb-20">
-              <span className="text-xs font-mono uppercase tracking-[0.2em] text-neon-green mb-4 block" data-testid="services-label">What We Deliver</span>
+              <span className="text-xs font-mono uppercase tracking-[0.2em] text-brand-green mb-4 block" data-testid="services-label">What We Deliver</span>
               <h2 className="font-heading text-4xl md:text-6xl font-semibold tracking-tight" data-testid="services-title">Enterprise Solutions</h2>
             </div>
           </AnimatedSection>
@@ -242,7 +229,7 @@ function App() {
         <div className="max-w-[1400px] mx-auto px-6 md:px-12">
           <AnimatedSection>
             <div className="text-center mb-20">
-              <span className="text-xs font-mono uppercase tracking-[0.2em] text-gold mb-4 block" data-testid="ecosystem-label">Innovation Network</span>
+              <span className="text-xs font-mono uppercase tracking-[0.2em] text-brand-yellow mb-4 block" data-testid="ecosystem-label">Innovation Network</span>
               <h2 className="font-heading text-4xl md:text-6xl font-semibold tracking-tight mb-6" data-testid="ecosystem-title">Our Ecosystem</h2>
               <p className="text-gray-300 text-lg max-w-2xl mx-auto">Genesys Info X operates as a parent innovation ecosystem, powering multiple specialized brands.</p>
             </div>
@@ -253,17 +240,17 @@ function App() {
               {
                 name: 'Blissberg',
                 desc: 'Education platform delivering industry-aligned internships, training programs, and career acceleration for tech professionals.',
-                color: 'neon-green'
+                color: 'brand-yellow'
               },
               {
                 name: 'Genesys Green X',
                 desc: 'Dedicated to sustainable energy solutions, green technology integration, and environmental impact optimization.',
-                color: 'gold'
+                color: 'brand-green'
               },
               {
                 name: 'Digital AI Solutions',
                 desc: 'Specialized AI consulting arm delivering generative AI, predictive analytics, and intelligent automation for enterprises.',
-                color: 'neon-green'
+                color: 'brand-yellow'
               }
             ].map((brand, idx) => (
               <AnimatedSection key={idx}>
@@ -300,7 +287,7 @@ function App() {
               { title: 'Enterprise Reliability', icon: '🛡️', desc: 'Fortune 500 trusted' }
             ].map((item, idx) => (
               <AnimatedSection key={idx}>
-                <div className="text-center glass-panel p-8 hover:border-neon-green/30 transition-all duration-300" data-testid={`why-choose-item-${idx}`}>
+                <div className="text-center glass-panel p-8 hover:border-brand-yellow/30 transition-all duration-300" data-testid={`why-choose-item-${idx}`}>
                   <div className="text-5xl mb-4">{item.icon}</div>
                   <h3 className="font-heading text-lg font-medium mb-2 text-white">{item.title}</h3>
                   <p className="text-gray-400 text-sm">{item.desc}</p>
@@ -316,7 +303,7 @@ function App() {
         <div className="max-w-[1400px] mx-auto px-6 md:px-12">
           <AnimatedSection>
             <div className="text-center mb-16">
-              <span className="text-xs font-mono uppercase tracking-[0.2em] text-neon-green mb-4 block" data-testid="careers-label">Join Our Team</span>
+              <span className="text-xs font-mono uppercase tracking-[0.2em] text-brand-green mb-4 block" data-testid="careers-label">Join Our Team</span>
               <h2 className="font-heading text-4xl md:text-6xl font-semibold tracking-tight mb-6" data-testid="careers-title">We're Hiring</h2>
               <p className="text-gray-300 text-lg max-w-2xl mx-auto">Looking for top-tier engineering talent to join our global innovation teams.</p>
             </div>
@@ -328,7 +315,7 @@ function App() {
                 <h3 className="font-heading text-2xl font-medium mb-6 text-white" data-testid="careers-roles-title">Open Positions:</h3>
                 <div className="flex flex-wrap gap-4">
                   {['Java Developer', 'Python Engineer', 'DevOps Specialist', 'AI/ML Engineer', 'Blockchain Developer', 'Golang Developer'].map((role, idx) => (
-                    <span key={idx} className="px-6 py-3 bg-neon-green-dim border border-neon-green/30 text-neon-green font-mono text-sm uppercase tracking-wider" data-testid={`career-role-${idx}`}>
+                    <span key={idx} className="px-6 py-3 bg-brand-yellow-dim border border-brand-yellow/30 text-brand-yellow font-mono text-sm uppercase tracking-wider" data-testid={`career-role-${idx}`}>
                       {role}
                     </span>
                   ))}
@@ -375,16 +362,16 @@ function App() {
           <div className="grid md:grid-cols-2 gap-16">
             <AnimatedSection>
               <div>
-                <span className="text-xs font-mono uppercase tracking-[0.2em] text-gold mb-4 block" data-testid="contact-label">Get In Touch</span>
+                <span className="text-xs font-mono uppercase tracking-[0.2em] text-brand-yellow mb-4 block" data-testid="contact-label">Get In Touch</span>
                 <h2 className="font-heading text-4xl md:text-6xl font-semibold tracking-tight mb-8" data-testid="contact-title">Let's Build the Future</h2>
                 <div className="space-y-6">
                   <div>
                     <p className="text-gray-400 text-sm mb-2">General Inquiries</p>
-                    <a href="mailto:info@genesysinfox.com" className="text-neon-green text-xl hover:underline" data-testid="contact-email-general">info@genesysinfox.com</a>
+                    <a href="mailto:info@genesysinfox.com" className="text-brand-yellow text-xl hover:underline" data-testid="contact-email-general">info@genesysinfox.com</a>
                   </div>
                   <div>
                     <p className="text-gray-400 text-sm mb-2">Careers</p>
-                    <a href="mailto:recruitment@genesysinfox.com" className="text-gold text-xl hover:underline" data-testid="contact-email-careers">recruitment@genesysinfox.com</a>
+                    <a href="mailto:recruitment@genesysinfox.com" className="text-brand-green text-xl hover:underline" data-testid="contact-email-careers">recruitment@genesysinfox.com</a>
                   </div>
                   <div>
                     <p className="text-gray-400 text-sm mb-2">Location</p>
@@ -404,7 +391,7 @@ function App() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
-                    className="w-full bg-white/5 border border-white/10 px-4 py-3 text-white focus:border-neon-green focus:outline-none transition-colors"
+                    className="w-full bg-white/5 border border-white/10 px-4 py-3 text-white focus:border-brand-yellow focus:outline-none transition-colors"
                     placeholder="your.email@company.com"
                     data-testid="contact-form-email"
                   />
@@ -417,7 +404,7 @@ function App() {
                     onChange={(e) => setMessage(e.target.value)}
                     required
                     rows={5}
-                    className="w-full bg-white/5 border border-white/10 px-4 py-3 text-white focus:border-neon-green focus:outline-none transition-colors resize-none"
+                    className="w-full bg-white/5 border border-white/10 px-4 py-3 text-white focus:border-brand-yellow focus:outline-none transition-colors resize-none"
                     placeholder="Tell us about your project..."
                     data-testid="contact-form-message"
                   />
@@ -431,7 +418,7 @@ function App() {
                   {submitStatus === 'sending' ? 'Sending...' : 'Send Message'}
                 </button>
                 {submitStatus === 'success' && (
-                  <p className="text-neon-green mt-4 text-center" data-testid="contact-form-success">Message sent successfully!</p>
+                  <p className="text-brand-green mt-4 text-center" data-testid="contact-form-success">Message sent successfully!</p>
                 )}
                 {submitStatus === 'error' && (
                   <p className="text-red-500 mt-4 text-center" data-testid="contact-form-error">Failed to send message. Please try again.</p>
@@ -446,14 +433,13 @@ function App() {
       <footer className="bg-charcoal border-t border-white/10 py-12" data-testid="footer">
         <div className="max-w-[1400px] mx-auto px-6 md:px-12">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-            <div className="font-heading text-2xl font-bold">
-              <span className="text-white">GENESYS</span>
-              <span className="text-neon-green"> INFO X</span>
+            <div>
+              <img src={LOGO_URL} alt="Genesys Info X" className="logo-image" style={{ maxWidth: '160px' }} />
             </div>
             <div className="flex gap-6">
-              <a href="#" className="text-gray-400 hover:text-neon-green transition-colors" data-testid="footer-linkedin">LinkedIn</a>
-              <a href="#" className="text-gray-400 hover:text-neon-green transition-colors" data-testid="footer-twitter">Twitter</a>
-              <a href="#" className="text-gray-400 hover:text-neon-green transition-colors" data-testid="footer-github">GitHub</a>
+              <a href="#" className="text-gray-400 hover:text-brand-yellow transition-colors" data-testid="footer-linkedin">LinkedIn</a>
+              <a href="#" className="text-gray-400 hover:text-brand-yellow transition-colors" data-testid="footer-twitter">Twitter</a>
+              <a href="#" className="text-gray-400 hover:text-brand-yellow transition-colors" data-testid="footer-github">GitHub</a>
             </div>
           </div>
           <div className="text-center mt-8 text-gray-500 text-sm">
@@ -465,10 +451,10 @@ function App() {
   );
 }
 
-// Animated Section Component
+// Animated Section Component with improved performance
 function AnimatedSection({ children }) {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
     <motion.div

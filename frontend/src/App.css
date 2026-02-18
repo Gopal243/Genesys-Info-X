@@ -5,7 +5,7 @@
   transform: translateX(-50%);
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle at center, rgba(57, 255, 20, 0.15) 0%, rgba(5, 5, 5, 0) 70%);
+  background: radial-gradient(circle at center, rgba(253, 185, 19, 0.12) 0%, rgba(5, 5, 5, 0) 70%);
   pointer-events: none;
   z-index: 0;
 }
@@ -14,7 +14,7 @@
   position: relative;
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   overflow: hidden;
 }
 
@@ -25,15 +25,15 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, rgba(57, 255, 20, 0.05) 0%, transparent 50%);
+  background: linear-gradient(135deg, rgba(253, 185, 19, 0.05) 0%, transparent 50%);
   opacity: 0;
-  transition: opacity 0.5s ease;
+  transition: opacity 0.4s ease;
 }
 
 .service-card:hover {
-  border-color: rgba(57, 255, 20, 0.3);
-  transform: translateY(-4px);
-  box-shadow: 0 0 30px rgba(57, 255, 20, 0.1);
+  border-color: rgba(253, 185, 19, 0.4);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(253, 185, 19, 0.15);
 }
 
 .service-card:hover::before {
@@ -42,17 +42,17 @@
 
 .brand-card {
   background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
-  border: 1px solid rgba(212, 175, 55, 0.2);
+  border: 1px solid rgba(0, 200, 83, 0.2);
   transition: all 0.4s ease;
 }
 
 .brand-card:hover {
-  border-color: rgba(212, 175, 55, 0.5);
-  box-shadow: 0 10px 40px rgba(212, 175, 55, 0.1);
+  border-color: rgba(0, 200, 83, 0.5);
+  box-shadow: 0 10px 40px rgba(0, 200, 83, 0.1);
 }
 
 .btn-primary {
-  background: #39FF14;
+  background: #FDB913;
   color: #000000;
   font-weight: 700;
   padding: 16px 32px;
@@ -61,32 +61,33 @@
   font-size: 14px;
   border: none;
   transition: all 0.3s ease;
-  clip-path: polygon(0 0, 100% 0, 100% 80%, 95% 100%, 0 100%);
   cursor: pointer;
+  border-radius: 2px;
 }
 
 .btn-primary:hover {
-  background: #32D711;
+  background: #FFD700;
   transform: translateY(-2px);
-  box-shadow: 0 10px 30px rgba(57, 255, 20, 0.3);
+  box-shadow: 0 10px 30px rgba(253, 185, 19, 0.3);
 }
 
 .btn-secondary {
   background: transparent;
-  border: 2px solid #D4AF37;
-  color: #D4AF37;
+  border: 2px solid #00C853;
+  color: #00C853;
   padding: 14px 32px;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   font-size: 14px;
   transition: all 0.3s ease;
   cursor: pointer;
+  border-radius: 2px;
 }
 
 .btn-secondary:hover {
-  background: rgba(212, 175, 55, 0.1);
-  border-color: #F1C40F;
-  color: #F1C40F;
+  background: rgba(0, 200, 83, 0.1);
+  border-color: #4CAF50;
+  color: #4CAF50;
 }
 
 .partner-logo-scroll {
@@ -108,7 +109,7 @@
   top: 0;
   bottom: 0;
   width: 2px;
-  background: linear-gradient(to bottom, #39FF14, #D4AF37);
+  background: linear-gradient(to bottom, #FDB913, #00C853);
 }
 
 .timeline-dot {
@@ -117,6 +118,17 @@
   width: 14px;
   height: 14px;
   border-radius: 50%;
-  background: #39FF14;
-  box-shadow: 0 0 20px rgba(57, 255, 20, 0.6);
+  background: #FDB913;
+  box-shadow: 0 0 20px rgba(253, 185, 19, 0.6);
+}
+
+.logo-image {
+  max-width: 180px;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .logo-image {
+    max-width: 140px;
+  }
 }
