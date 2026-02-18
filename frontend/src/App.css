@@ -41,9 +41,23 @@ body {
   align-items: center;
 }
 
+.nav-logo-wrapper {
+  background: linear-gradient(135deg, rgba(253, 185, 19, 0.12), rgba(255, 215, 0, 0.08));
+  padding: 12px 24px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(253, 185, 19, 0.15);
+  transition: all 0.3s ease;
+}
+
+.nav-logo-wrapper:hover {
+  box-shadow: 0 6px 20px rgba(253, 185, 19, 0.25);
+  transform: translateY(-2px);
+}
+
 .nav-logo {
   height: 50px;
   width: auto;
+  display: block;
 }
 
 .nav-menu {
@@ -352,6 +366,155 @@ body {
   border-color: #00C853;
 }
 
+/* Modal */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  z-index: 2000;
+}
+
+.modal-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 900px;
+  max-height: 85vh;
+  background: #FFFFFF;
+  border-radius: 24px;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.3);
+  z-index: 2001;
+  overflow-y: auto;
+}
+
+.modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  background: #F3F4F6;
+  border: none;
+  border-radius: 50%;
+  font-size: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+  z-index: 10;
+}
+
+.modal-close:hover {
+  background: #E5E7EB;
+  transform: scale(1.1);
+}
+
+.modal-content {
+  padding: 60px;
+}
+
+.modal-title {
+  font-size: 42px;
+  font-weight: 800;
+  margin-bottom: 25px;
+  color: #1A1A1A;
+}
+
+.modal-intro {
+  font-size: 20px;
+  line-height: 1.7;
+  color: #4B5563;
+  margin-bottom: 25px;
+}
+
+.modal-description {
+  font-size: 17px;
+  line-height: 1.8;
+  color: #6B7280;
+  margin-bottom: 40px;
+}
+
+.modal-section-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 40px 0 25px;
+  color: #1A1A1A;
+}
+
+.modal-areas {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.modal-area-item {
+  background: #F9FAFB;
+  padding: 30px;
+  border-radius: 16px;
+  border-left: 4px solid #00C853;
+}
+
+.modal-area-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1A1A1A;
+  margin-bottom: 12px;
+}
+
+.modal-area-content {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #4B5563;
+}
+
+.modal-outcomes,
+.modal-vision,
+.modal-mission {
+  margin-top: 40px;
+  padding: 30px;
+  background: linear-gradient(135deg, rgba(253, 185, 19, 0.08), rgba(0, 200, 83, 0.08));
+  border-radius: 16px;
+}
+
+.modal-outcomes-list {
+  list-style: none;
+  padding: 0;
+}
+
+.modal-outcomes-list li {
+  font-size: 17px;
+  line-height: 1.8;
+  color: #1A1A1A;
+  margin-bottom: 12px;
+  padding-left: 30px;
+  position: relative;
+  font-weight: 600;
+}
+
+.modal-outcomes-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #00C853;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.modal-vision p,
+.modal-mission p {
+  font-size: 17px;
+  line-height: 1.8;
+  color: #1A1A1A;
+  font-weight: 500;
+}
+
 /* Capabilities */
 .capabilities-section {
   padding: 120px 40px;
@@ -539,49 +702,6 @@ body {
   text-decoration: underline;
 }
 
-/* Partners */
-.partners-section {
-  padding: 80px 40px;
-  background: #FFFFFF;
-  overflow: hidden;
-}
-
-.partners-title {
-  text-align: center;
-  font-size: 24px;
-  color: #6B7280;
-  margin-bottom: 60px;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.partners-scroll {
-  display: flex;
-  gap: 60px;
-  animation: scroll 30s linear infinite;
-}
-
-.partner-logo {
-  flex-shrink: 0;
-  width: 140px;
-  height: 80px;
-  background: #F9FAFB;
-  border: 1px solid #E5E7EB;
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 12px;
-  font-weight: 600;
-  color: #9CA3AF;
-}
-
-@keyframes scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
 /* Contact */
 .contact-section {
   padding: 120px 40px;
@@ -743,5 +863,13 @@ a.contact-value:hover {
   .btn-primary,
   .btn-secondary {
     width: 100%;
+  }
+  
+  .modal-content {
+    padding: 40px 30px;
+  }
+  
+  .modal-title {
+    font-size: 32px;
   }
 }

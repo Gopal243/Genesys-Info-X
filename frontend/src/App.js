@@ -1,12 +1,105 @@
 import { useEffect, useRef, useState } from 'react';
 import './App.css';
-import { motion, useInView, useScroll, useTransform } from 'framer-motion';
+import { motion, useInView, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import CountUp from 'react-countup';
 import axios from 'axios';
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 const API = `${BACKEND_URL}/api`;
 const LOGO_URL = 'https://customer-assets.emergentagent.com/job_web-creator-768/artifacts/925qpowk_IMG_9976.jpg';
+
+// Detailed content for verticals
+const verticalDetails = {
+  tech: {
+    title: "Technology",
+    intro: "Technology at Genesys Info X represents a future-focused innovation ecosystem designed to help enterprises scale faster, integrate smarter, and build resilient digital platforms.",
+    description: "Our technology division combines artificial intelligence, cloud engineering, enterprise software development, cybersecurity practices, and automation frameworks to deliver solutions that drive operational excellence and digital transformation.",
+    areas: [
+      {
+        title: "Enterprise Software Engineering",
+        content: "We design and develop scalable web platforms, mobile applications, enterprise dashboards, and workflow automation systems tailored for evolving business environments. Our architecture prioritizes modular design, high performance, and seamless integration."
+      },
+      {
+        title: "Artificial Intelligence & Machine Learning",
+        content: "Genesys Info X builds intelligent solutions that enable predictive analytics, AI assistants, automation pipelines, and advanced decision-making systems. Our AI-first approach empowers organizations to unlock data-driven innovation."
+      },
+      {
+        title: "Cloud & DevOps Transformation",
+        content: "We help organizations migrate, optimize, and modernize their infrastructure through cloud-native practices, CI/CD pipelines, infrastructure automation, and performance monitoring strategies."
+      },
+      {
+        title: "Cybersecurity & Compliance",
+        content: "Security is embedded into every stage of development. Our practices include secure system design, DevSecOps frameworks, and compliance-ready architectures."
+      },
+      {
+        title: "Blockchain & Emerging Technologies",
+        content: "From tokenization concepts to secure distributed solutions, we explore next-generation digital ecosystems that enable transparency, traceability, and innovation."
+      }
+    ],
+    outcomes: [
+      "Faster deployment cycles",
+      "Smarter automation",
+      "Enterprise-grade scalability",
+      "Future-ready technology ecosystems"
+    ]
+  },
+  health: {
+    title: "Healthcare",
+    intro: "Healthcare innovation at Genesys Info X is driven by a mission to enhance patient outcomes, improve operational efficiency, and enable smarter healthcare ecosystems through technology.",
+    description: "We combine digital health platforms, artificial intelligence, and data integration strategies to support modern healthcare providers and organizations.",
+    areas: [
+      {
+        title: "Digital Health Platforms",
+        content: "We design intuitive healthcare applications including patient engagement portals, provider dashboards, and digital workflow solutions that enhance accessibility and collaboration."
+      },
+      {
+        title: "AI-Powered Healthcare Operations",
+        content: "Our solutions leverage AI to support analytics, workflow automation, clinical decision support concepts, and resource optimization strategies."
+      },
+      {
+        title: "Interoperability & System Integration",
+        content: "Genesys Info X focuses on connecting systems securely to ensure seamless data exchange between platforms, improving coordination across healthcare environments."
+      },
+      {
+        title: "Healthcare Analytics & Insights",
+        content: "Advanced reporting and visualization tools help healthcare teams understand trends, optimize performance, and make informed decisions."
+      },
+      {
+        title: "Workforce Enablement",
+        content: "We support healthcare workforce development through structured learning models, digital transformation training, and future-ready skill programs."
+      }
+    ],
+    vision: "To create a connected healthcare ecosystem where technology empowers both providers and patients through innovation, reliability, and secure digital transformation."
+  },
+  semi: {
+    title: "Semiconductors",
+    intro: "The semiconductor vertical at Genesys Info X focuses on building the foundation for innovation by supporting workforce readiness, industry collaboration, and engineering ecosystem awareness.",
+    description: "As semiconductors drive the global technology landscape, our mission is to bridge talent development with industry demands through structured programs and innovation initiatives.",
+    areas: [
+      {
+        title: "Industry-Ready Workforce Programs",
+        content: "We create structured learning pathways designed to prepare professionals for semiconductor environments through practical exposure, evaluation models, and skill-based progression."
+      },
+      {
+        title: "Engineering Enablement",
+        content: "Our initiatives introduce participants to industry workflows, quality standards, engineering principles, and technology fundamentals aligned with modern semiconductor ecosystems."
+      },
+      {
+        title: "Hands-On Learning Tracks",
+        content: "From foundational knowledge to advanced specialization, our learning tracks focus on real-world applications and industry-aligned skill development."
+      },
+      {
+        title: "Internship & Placement Models",
+        content: "Genesys Info X supports structured internship frameworks that connect talent pipelines with evolving industry requirements."
+      },
+      {
+        title: "Ecosystem Development",
+        content: "By fostering innovation-driven learning and collaboration models, we aim to contribute to the growth of future semiconductor talent and engineering excellence."
+      }
+    ],
+    mission: "To strengthen the innovation pipeline by nurturing skilled professionals who will power tomorrow's semiconductor advancements."
+  }
+};
 
 // Animation variants
 const fadeUp = {
@@ -20,6 +113,7 @@ const stagger = {
 
 function App() {
   const [activeVertical, setActiveVertical] = useState(null);
+  const [selectedVertical, setSelectedVertical] = useState(null);
   const [formData, setFormData] = useState({ name: '', email: '', phone: '', message: '' });
   const [submitStatus, setSubmitStatus] = useState('');
   
@@ -47,6 +141,16 @@ function App() {
     }
   };
 
+  const openVerticalDetail = (vertical) => {
+    setSelectedVertical(vertical);
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closeVerticalDetail = () => {
+    setSelectedVertical(null);
+    document.body.style.overflow = 'auto';
+  };
+
   return (
     <div className="app-container">
       {/* Navigation */}
@@ -57,7 +161,9 @@ function App() {
         className="navbar"
       >
         <div className="nav-container">
-          <img src={LOGO_URL} alt="Genesys Info X" className="nav-logo" />
+          <div className="nav-logo-wrapper">
+            <img src={LOGO_URL} alt="Genesys Info X" className="nav-logo" />
+          </div>
           <div className="nav-menu">
             <button onClick={() => scrollToSection('verticals')} className="nav-link">Verticals</button>
             <button onClick={() => scrollToSection('capabilities')} className="nav-link">Capabilities</button>
@@ -118,6 +224,7 @@ function App() {
             animation={<TechAnimation />}
             isActive={activeVertical === 'tech'}
             onHover={() => setActiveVertical('tech')}
+            onLearnMore={() => openVerticalDetail('tech')}
           />
 
           <VerticalCard 
@@ -134,6 +241,7 @@ function App() {
             animation={<HealthAnimation />}
             isActive={activeVertical === 'health'}
             onHover={() => setActiveVertical('health')}
+            onLearnMore={() => openVerticalDetail('health')}
           />
 
           <VerticalCard 
@@ -150,6 +258,7 @@ function App() {
             animation={<SemiconductorAnimation />}
             isActive={activeVertical === 'semi'}
             onHover={() => setActiveVertical('semi')}
+            onLearnMore={() => openVerticalDetail('semi')}
           />
         </div>
       </section>
@@ -265,18 +374,6 @@ function App() {
         </AnimatedSection>
       </section>
 
-      {/* Partners */}
-      <section className="partners-section">
-        <AnimatedSection>
-          <h3 className="partners-title">We collaborate with academic institutions, enterprise partners and ecosystem leaders.</h3>
-        </AnimatedSection>
-        <div className="partners-scroll">
-          {[...Array(10)].map((_, idx) => (
-            <div key={idx} className="partner-logo">PARTNER</div>
-          ))}
-        </div>
-      </section>
-
       {/* Contact */}
       <section id="contact" className="contact-section">
         <div className="contact-container">
@@ -353,6 +450,13 @@ function App() {
         </div>
         <p className="footer-copyright">© 2026 Genesys Info X. Engineering the Future Through Innovation.</p>
       </footer>
+
+      {/* Vertical Detail Modal */}
+      <VerticalDetailModal 
+        vertical={selectedVertical}
+        data={selectedVertical ? verticalDetails[selectedVertical] : null}
+        onClose={closeVerticalDetail}
+      />
     </div>
   );
 }
@@ -373,7 +477,7 @@ function AnimatedSection({ children }) {
   );
 }
 
-function VerticalCard({ icon, title, tagline, highlights, animation, isActive, onHover }) {
+function VerticalCard({ icon, title, tagline, highlights, animation, isActive, onHover, onLearnMore }) {
   return (
     <motion.div 
       className={`vertical-card ${isActive ? 'active' : ''}`}
@@ -401,7 +505,7 @@ function VerticalCard({ icon, title, tagline, highlights, animation, isActive, o
           </motion.li>
         ))}
       </ul>
-      <button className="vertical-btn">Learn More</button>
+      <button className="vertical-btn" onClick={onLearnMore}>Learn More</button>
     </motion.div>
   );
 }
@@ -422,6 +526,75 @@ function MetricCard({ end, suffix, label }) {
       </div>
       <div className="metric-label">{label}</div>
     </motion.div>
+  );
+}
+
+function VerticalDetailModal({ vertical, data, onClose }) {
+  if (!data) return null;
+
+  return (
+    <AnimatePresence>
+      {vertical && (
+        <>
+          <motion.div 
+            className="modal-backdrop"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={onClose}
+          />
+          <motion.div 
+            className="modal-container"
+            initial={{ opacity: 0, scale: 0.9, y: 50 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.9, y: 50 }}
+            transition={{ duration: 0.3 }}
+          >
+            <button className="modal-close" onClick={onClose}>×</button>
+            <div className="modal-content">
+              <h2 className="modal-title">{data.title}</h2>
+              <p className="modal-intro">{data.intro}</p>
+              <p className="modal-description">{data.description}</p>
+              
+              <h3 className="modal-section-title">Core Areas:</h3>
+              <div className="modal-areas">
+                {data.areas.map((area, idx) => (
+                  <div key={idx} className="modal-area-item">
+                    <h4 className="modal-area-title">{area.title}</h4>
+                    <p className="modal-area-content">{area.content}</p>
+                  </div>
+                ))}
+              </div>
+
+              {data.outcomes && (
+                <div className="modal-outcomes">
+                  <h3 className="modal-section-title">Outcome Focus:</h3>
+                  <ul className="modal-outcomes-list">
+                    {data.outcomes.map((outcome, idx) => (
+                      <li key={idx}>{outcome}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              {data.vision && (
+                <div className="modal-vision">
+                  <h3 className="modal-section-title">Vision:</h3>
+                  <p>{data.vision}</p>
+                </div>
+              )}
+
+              {data.mission && (
+                <div className="modal-mission">
+                  <h3 className="modal-section-title">Mission:</h3>
+                  <p>{data.mission}</p>
+                </div>
+              )}
+            </div>
+          </motion.div>
+        </>
+      )}
+    </AnimatePresence>
   );
 }
 
