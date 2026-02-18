@@ -159,13 +159,13 @@
     }
   },
   "image_urls": {
-    "hero_bg": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop",
-    "abstract_tech": "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?q=80&w=2070&auto=format&fit=crop",
+    "hero_bg": "https://images.pexels.com/photos/30869731/pexels-photo-30869731.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    "abstract_tech": "https://images.pexels.com/photos/30766684/pexels-photo-30766684.png?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
     "ai_brain": "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1932&auto=format&fit=crop",
     "cloud_server": "https://images.unsplash.com/photo-1558494949-ef526b01201b?q=80&w=1974&auto=format&fit=crop",
     "blockchain": "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?q=80&w=2032&auto=format&fit=crop",
     "green_energy": "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?q=80&w=2070&auto=format&fit=crop",
-    "office_meeting": "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=2032&auto=format&fit=crop",
+    "office_meeting": "https://images.pexels.com/photos/7794060/pexels-photo-7794060.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
     "logo_placeholder": "https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?q=80&w=2069&auto=format&fit=crop"
   },
   "instructions_to_main_agent": [
