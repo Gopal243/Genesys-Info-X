@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 import SiteHeader from "../components/SiteHeader";
 import Reveal from "../components/Reveal";
-import { INDUSTRY_IMAGES, LOGO_URL } from "../siteData";
+import { INDUSTRY_IMAGES, LOGO_URL, PAGE_IMAGES } from "../siteData";
 
 export default function IndustryPage({
   title,
