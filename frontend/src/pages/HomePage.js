@@ -11,10 +11,10 @@ const LOGO_URL =
   "https://customer-assets.emergentagent.com/job_cinematic-web-17/artifacts/3v7eszuf_ChatGPT%20Image%20Feb%2019%2C%202026%2C%2001_31_19%20PM.png";
 
 const BLISSBERG_LOGO_URL =
-  "https://customer-assets.emergentagent.com/job_cinematic-web-17/artifacts/9u4bvmg9_BLISSBERG_logo_transparent.png";
+  "https://customer-assets.emergentagent.com/job_cinematic-web-17/artifacts/gf4jpk1d_BLISSBERG_logo_transparent.png";
 
 const GREENX_LOGO_URL =
-  "https://customer-assets.emergentagent.com/job_cinematic-web-17/artifacts/m34rv4on_ChatGPT%20Image%20Feb%2019%2C%202026%2C%2006_03_38%20PM.png";
+  "https://customer-assets.emergentagent.com/job_cinematic-web-17/artifacts/2powj3mv_ChatGPT%20Image%20Feb%2019%2C%202026%2C%2006_03_38%20PM.png";
 
 const INDUSTRY_IMAGES = {
   technology:
