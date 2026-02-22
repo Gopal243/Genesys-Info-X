@@ -124,21 +124,32 @@
   right: 0;
   z-index: 1000;
   border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  transition: 
+    background 0.4s ease,
+    box-shadow 0.4s ease,
+    border-color 0.4s ease;
 }
 
 .site-header.light {
-  background: rgba(220, 220, 220, 0.88);
-  backdrop-filter: blur(14px);
+  background: rgba(220, 220, 220, 0.92);
+  backdrop-filter: blur(20px) saturate(1.2);
 }
 
 .site-header.dark {
-  background: rgba(10, 12, 18, 0.75);
-  backdrop-filter: blur(14px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(8, 10, 16, 0.80);
+  backdrop-filter: blur(20px) saturate(1.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .site-header.scrolled {
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+  box-shadow: 
+    0 10px 40px rgba(0, 0, 0, 0.35),
+    0 2px 15px rgba(0, 0, 0, 0.2);
+}
+
+.site-header.dark.scrolled {
+  background: rgba(6, 8, 14, 0.92);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .site-header-inner {
