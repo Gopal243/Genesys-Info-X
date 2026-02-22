@@ -540,11 +540,11 @@
   margin: 0 auto 22px;
   display: block;
   filter: drop-shadow(0 22px 70px rgba(0, 0, 0, 0.65));
-  animation: floaty 6.5s ease-in-out infinite;
+  animation: none;
 }
 
 .spotlight-media video {
-  animation: slow-zoom 12s ease-in-out infinite;
+  animation: none;
 }
 
 .hero-pill {
