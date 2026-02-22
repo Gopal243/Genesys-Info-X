@@ -185,6 +185,12 @@ function Spotlight() {
 
   return (
     <section className="section" id="spotlight">
+      <div className="section-video-bg" aria-hidden>
+        <video autoPlay muted loop playsInline preload="none">
+          <source src={INDUSTRY_VIDEOS.technology} type="video/mp4" />
+        </video>
+        <div className="section-video-overlay" />
+      </div>
       <div className="container">
         <Reveal>
           <div className="section-kicker">SOLUTIONS SPOTLIGHT</div>
