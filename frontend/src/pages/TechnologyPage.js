@@ -12,7 +12,7 @@ export default function TechnologyPage() {
         "Security-by-design delivery",
         "Data systems & analytics",
       ]}
-      videoUrl="https://cdn.pixabay.com/video/2022/12/14/143513-781206125_large.mp4"
+      videoUrl="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
       related={[
         {
           title: "Healthcare",

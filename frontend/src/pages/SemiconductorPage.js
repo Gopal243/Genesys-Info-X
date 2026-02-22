@@ -12,7 +12,7 @@ export default function SemiconductorPage() {
         "Scalable systems and data pipelines",
         "Partner-ready execution models",
       ]}
-      videoUrl="https://cdn.pixabay.com/video/2023/05/13/162625-826547636_large.mp4"
+      videoUrl="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4"
       related={[
         {
           title: "Technology",

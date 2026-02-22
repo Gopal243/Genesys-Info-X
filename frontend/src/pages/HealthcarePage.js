@@ -12,7 +12,7 @@ export default function HealthcarePage() {
         "AI operations for healthcare teams",
         "Workflow automation & QA",
       ]}
-      videoUrl="https://cdn.pixabay.com/video/2022/11/24/140547-774820986_large.mp4"
+      videoUrl="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4"
       related={[
         {
           title: "Technology",

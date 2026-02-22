@@ -84,7 +84,7 @@ function Hero() {
       <div className="hero-bg">
         <video className="hero-video" autoPlay muted loop playsInline preload="metadata">
           <source
-            src="https://cdn.pixabay.com/video/2023/11/26/190231-889306027_large.mp4"
+            src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
             type="video/mp4"
           />
         </video>
@@ -135,19 +135,19 @@ function Spotlight() {
         title: "AI-driven Operations",
         desc:
           "Automate the repetitive. Elevate the critical. Ship intelligence with reliability.",
-        video: "https://cdn.pixabay.com/video/2023/06/25/169115-839633332_large.mp4",
+        video: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
         accent: "yellow",
       },
       {
         title: "Healthcare Systems",
         desc: "RCM workflows, billing, coding, analytics, and compliance-ready delivery.",
-        video: "https://cdn.pixabay.com/video/2022/11/24/140547-774820986_large.mp4",
+        video: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
         accent: "green",
       },
       {
         title: "Semiconductor Platforms",
         desc: "Performance, safety, and scale—built for high-stakes engineering.",
-        video: "https://cdn.pixabay.com/video/2023/05/13/162625-826547636_large.mp4",
+        video: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4",
         accent: "yellow",
       },
     ],
