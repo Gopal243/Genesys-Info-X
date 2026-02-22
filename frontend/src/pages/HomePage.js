@@ -586,7 +586,7 @@ function Capabilities() {
   ];
 
   return (
-    <section className="section" id="capabilities">
+    <section className="section has-video-bg" id="capabilities">
       <div className="container">
         <Reveal>
           <div className="section-kicker">SERVICES & CAPABILITIES</div>
