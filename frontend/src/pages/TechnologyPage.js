@@ -13,7 +13,7 @@ export default function TechnologyPage() {
         "Security-by-design delivery",
         "Data systems & analytics",
       ]}
-      videoUrl="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
+      videoUrl="/media/tech.mp4"
       related={[
         {
           title: "Healthcare",

@@ -13,7 +13,7 @@ export default function HealthcarePage() {
         "AI operations for healthcare teams",
         "Workflow automation & QA",
       ]}
-      videoUrl="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4"
+      videoUrl="/media/healthcare.mp4"
       related={[
         {
           title: "Technology",

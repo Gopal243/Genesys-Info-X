@@ -32,6 +32,12 @@ export default function IndustryPage({
   related,
   pageKey,
 }) {
+  const sectionBgVideo =
+    pageKey === "healthcare"
+      ? "/media/healthcare.mp4"
+      : pageKey === "semiconductors"
+        ? "/media/semiconductors.mp4"
+        : "/media/tech.mp4";
   return (
     <div className={`page page-industry ${pageKey ? `page-${pageKey}` : ""}`}>
       <PageHeader title={title} />
@@ -74,7 +80,7 @@ export default function IndustryPage({
         <section className="section has-video-bg">
           <div className="section-video-bg" aria-hidden>
             <video autoPlay muted loop playsInline preload="none">
-              <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4" type="video/mp4" />
+              <source src={sectionBgVideo} type="video/mp4" />
             </video>
             <div className="section-video-overlay" />
           </div>

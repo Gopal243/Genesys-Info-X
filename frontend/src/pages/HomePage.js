@@ -331,7 +331,7 @@ function TechStack() {
     <section className="section has-video-bg" id="tech-stack">
       <div className="section-video-bg" aria-hidden>
         <video autoPlay muted loop playsInline preload="none">
-          <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4" type="video/mp4" />
+          <source src={INDUSTRY_VIDEOS.technology} type="video/mp4" />
         </video>
         <div className="section-video-overlay" />
       </div>
@@ -390,7 +390,7 @@ function Exclusives() {
     <section className="section has-video-bg" id="exclusives">
       <div className="section-video-bg" aria-hidden>
         <video autoPlay muted loop playsInline preload="none">
-          <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4" type="video/mp4" />
+          <source src={INDUSTRY_VIDEOS.semiconductors} type="video/mp4" />
         </video>
         <div className="section-video-overlay" />
       </div>
@@ -434,7 +434,7 @@ function WhoWeAre() {
     <section className="section has-video-bg" id="who-we-are">
       <div className="section-video-bg" aria-hidden>
         <video autoPlay muted loop playsInline preload="none">
-          <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4" type="video/mp4" />
+          <source src={INDUSTRY_VIDEOS.healthcare} type="video/mp4" />
         </video>
         <div className="section-video-overlay" />
       </div>
@@ -516,7 +516,7 @@ function Strength() {
     <section className="section has-video-bg" id="strength">
       <div className="section-video-bg" aria-hidden>
         <video autoPlay muted loop playsInline preload="none">
-          <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4" type="video/mp4" />
+          <source src={INDUSTRY_VIDEOS.technology} type="video/mp4" />
         </video>
         <div className="section-video-overlay" />
       </div>
@@ -615,7 +615,7 @@ function Capabilities() {
     <section className="section has-video-bg" id="capabilities">
       <div className="section-video-bg" aria-hidden>
         <video autoPlay muted loop playsInline preload="none">
-          <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4" type="video/mp4" />
+          <source src={INDUSTRY_VIDEOS.healthcare} type="video/mp4" />
         </video>
         <div className="section-video-overlay" />
       </div>
@@ -656,7 +656,7 @@ function CaseStudies() {
     <section className="section has-video-bg" id="case-studies">
       <div className="section-video-bg" aria-hidden>
         <video autoPlay muted loop playsInline preload="none">
-          <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4" type="video/mp4" />
+          <source src={INDUSTRY_VIDEOS.semiconductors} type="video/mp4" />
         </video>
         <div className="section-video-overlay" />
       </div>
@@ -705,7 +705,7 @@ function FAQ() {
     <section className="section has-video-bg" id="faq">
       <div className="section-video-bg" aria-hidden>
         <video autoPlay muted loop playsInline preload="none">
-          <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4" type="video/mp4" />
+          <source src={INDUSTRY_VIDEOS.technology} type="video/mp4" />
         </video>
         <div className="section-video-overlay" />
       </div>
@@ -754,7 +754,7 @@ function Newsletter() {
     <section className="section has-video-bg" id="newsletter">
       <div className="section-video-bg" aria-hidden>
         <video autoPlay muted loop playsInline preload="none">
-          <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" type="video/mp4" />
+          <source src={INDUSTRY_VIDEOS.hero} type="video/mp4" />
         </video>
         <div className="section-video-overlay" />
       </div>
@@ -826,7 +826,7 @@ function Contact() {
     <section className="section has-video-bg" id="contact">
       <div className="section-video-bg" aria-hidden>
         <video autoPlay muted loop playsInline preload="none">
-          <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" type="video/mp4" />
+          <source src={INDUSTRY_VIDEOS.hero} type="video/mp4" />
         </video>
         <div className="section-video-overlay" />
       </div>
