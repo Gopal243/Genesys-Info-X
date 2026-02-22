@@ -54,9 +54,62 @@ function Reveal({ children, delay = 0 }) {
   );
 }
 
+function MegaMenu({ open, title, href, sections, featured }) {
+  if (!open) return null;
+
+  return (
+    <motion.div
+      className="mega"
+      initial={{ opacity: 0, y: 8 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: 8 }}
+      transition={{ duration: 0.18, ease: [0.22, 1, 0.36, 1] }}
+      role="menu"
+      aria-label={`${title} menu`}
+    >
+      <div className="mega-head">
+        <div className="mega-title">{title}</div>
+        <a className="mega-link" href={href}>
+          View section →
+        </a>
+      </div>
+
+      <div className="mega-grid">
+        <div className="mega-cols">
+          {sections.map((s) => (
+            <div key={s.title} className="mega-col">
+              <div className="mega-col-title">{s.title}</div>
+              <div className="mega-items">
+                {s.items.map((it) => (
+                  <a key={it.label} className="mega-item" href={it.href}>
+                    <div className="mega-item-label">{it.label}</div>
+                    <div className="mega-item-desc">{it.desc}</div>
+                  </a>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <a className="mega-feature" href={featured.href}>
+          <img className="mega-feature-img" src={featured.image} alt="" loading="lazy" />
+          <div className="mega-feature-overlay" />
+          <div className="mega-feature-body">
+            <div className="mega-feature-kicker">{featured.kicker}</div>
+            <div className="mega-feature-title">{featured.title}</div>
+            <div className="mega-feature-desc">{featured.desc}</div>
+            <div className="mega-feature-cta">{featured.cta} →</div>
+          </div>
+        </a>
+      </div>
+    </motion.div>
+  );
+}
+
 function SiteHeader({ variant = "light" }) {
   const navigate = useNavigate();
   const [scrolled, setScrolled] = useState(false);
+  const [open, setOpen] = useState(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10);
@@ -65,7 +118,245 @@ function SiteHeader({ variant = "light" }) {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  useEffect(() => {
+    const onKey = (e) => {
+      if (e.key === "Escape") setOpen(null);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, []);
+
+  const menus = {
+    solutions: {
+      title: "Solutions",
+      href: "#capabilities",
+      sections: [
+        {
+          title: "By capability",
+          items: [
+            {
+              label: "AI & Automation",
+              desc: "Operational intelligence, LLM workflows, and reliable delivery.",
+              href: "#capabilities",
+            },
+            {
+              label: "Cloud Modernization",
+              desc: "Platform upgrades, integration, and production-ready scale.",
+              href: "#capabilities",
+            },
+            {
+              label: "Security-by-Design",
+              desc: "Guardrails and monitoring built into every release.",
+              href: "#capabilities",
+            },
+            {
+              label: "Data & BI",
+              desc: "Dashboards and analytics for decisive execution.",
+              href: "#capabilities",
+            },
+          ],
+        },
+        {
+          title: "Delivery",
+          items: [
+            {
+              label: "Discovery & Roadmaps",
+              desc: "Clarify scope, milestones, and measurable outcomes.",
+              href: "#who-we-are",
+            },
+            {
+              label: "Product Engineering",
+              desc: "From MVP to enterprise rollout with predictable quality.",
+              href: "#capabilities",
+            },
+            {
+              label: "Platform Operations",
+              desc: "Uptime, observability, and performance at enterprise pace.",
+              href: "#strength",
+            },
+          ],
+        },
+      ],
+      featured: {
+        href: "#spotlight",
+        kicker: "Spotlight",
+        title: "Technology-packed delivery",
+        desc: "A premium grid with real engineering outcomes and clean UX.",
+        cta: "Explore spotlight",
+        image: INDUSTRY_IMAGES.technology,
+      },
+    },
+    industries: {
+      title: "Industries",
+      href: "#industries",
+      sections: [
+        {
+          title: "Core sectors",
+          items: [
+            {
+              label: "Technology",
+              desc: "AI, cloud, blockchain, IoT—built for transformation.",
+              href: "/technology",
+            },
+            {
+              label: "Healthcare",
+              desc: "RCM, billing, coding, analytics, and compliance-ready systems.",
+              href: "/healthcare",
+            },
+            {
+              label: "Semiconductors",
+              desc: "High-stakes engineering for performance and reliability.",
+              href: "/semiconductors",
+            },
+          ],
+        },
+        {
+          title: "Outcomes",
+          items: [
+            {
+              label: "Speed to production",
+              desc: "Tight roadmaps with crisp execution.",
+              href: "#strength",
+            },
+            {
+              label: "Compliance-ready delivery",
+              desc: "Security and process built into delivery.",
+              href: "#strength",
+            },
+            {
+              label: "Performance & reliability",
+              desc: "Systems designed to scale and evolve.",
+              href: "#tech-stack",
+            },
+          ],
+        },
+      ],
+      featured: {
+        href: "#industries",
+        kicker: "Who we serve",
+        title: "Three priority sectors",
+        desc: "Focused solutions that stay inside the grid—enterprise by design.",
+        cta: "View industries",
+        image: INDUSTRY_IMAGES.semiconductors,
+      },
+    },
+    company: {
+      title: "Company",
+      href: "#who-we-are",
+      sections: [
+        {
+          title: "About",
+          items: [
+            {
+              label: "Who we are",
+              desc: "Global delivery teams with partnership-first execution.",
+              href: "#who-we-are",
+            },
+            {
+              label: "Our mission",
+              desc: "Change trends through disciplined innovation.",
+              href: "#mission",
+            },
+            {
+              label: "Our strength",
+              desc: "Streamlined processes and measurable productivity.",
+              href: "#strength",
+            },
+          ],
+        },
+        {
+          title: "Engage",
+          items: [
+            {
+              label: "Talk to an expert",
+              desc: "Get a discovery call with a delivery plan.",
+              href: "#contact",
+            },
+            {
+              label: "Newsletter",
+              desc: "Updates from Genesys Info X.",
+              href: "#newsletter",
+            },
+          ],
+        },
+      ],
+      featured: {
+        href: "#contact",
+        kicker: "Contact",
+        title: "Tell us what you’re building",
+        desc: "We’ll align on scope, milestones, and outcomes.",
+        cta: "Start a conversation",
+        image: INDUSTRY_IMAGES.healthcare,
+      },
+    },
+    resources: {
+      title: "Resources",
+      href: "#case-studies",
+      sections: [
+        {
+          title: "Learn",
+          items: [
+            {
+              label: "Case Studies",
+              desc: "Recent delivery snapshots and system outcomes.",
+              href: "#case-studies",
+            },
+            {
+              label: "FAQ",
+              desc: "Quick answers to get started.",
+              href: "#faq",
+            },
+          ],
+        },
+        {
+          title: "Exclusive ventures",
+          items: [
+            {
+              label: "Blissberg",
+              desc: "Semiconductor innovation and premium engineering.",
+              href: "#exclusives",
+            },
+            {
+              label: "Genesys Green X",
+              desc: "Sustainable energy and green technology.",
+              href: "#exclusives",
+            },
+          ],
+        },
+      ],
+      featured: {
+        href: "#exclusives",
+        kicker: "Partnerships",
+        title: "Exclusives & ventures",
+        desc: "Strategic initiatives extending reach across sectors.",
+        cta: "View exclusives",
+        image: INDUSTRY_IMAGES.technology,
+      },
+    },
+  };
+
   const baseClass = variant === "light" ? "site-header light" : "site-header dark";
+
+  const NavItem = ({ id, label, href }) => (
+    <div
+      className={`nav-item ${open === id ? "open" : ""}`}
+      onMouseEnter={() => setOpen(id)}
+      onMouseLeave={() => setOpen(null)}
+    >
+      <a
+        href={href}
+        className="nav-link"
+        onClick={() => setOpen((v) => (v === id ? null : id))}
+        aria-haspopup="true"
+        aria-expanded={open === id}
+      >
+        {label} <span className="nav-caret" aria-hidden>
+          ▾
+        </span>
+      </a>
+      <MegaMenu open={open === id} title={menus[id].title} href={menus[id].href} sections={menus[id].sections} featured={menus[id].featured} />
+    </div>
+  );
 
   return (
     <header className={`${baseClass} ${scrolled ? "scrolled" : ""}`}>
@@ -82,14 +373,20 @@ function SiteHeader({ variant = "light" }) {
           </div>
         </button>
 
-        <nav className="site-nav">
-          <a href="#spotlight">Spotlight</a>
-          <a href="#tech-stack">Tech Stack</a>
-          <a href="#industries">Industries</a>
-          <a href="#who-we-are">Who we are</a>
-          <a href="#capabilities">Capabilities</a>
-          <a href="#case-studies">Case Studies</a>
-          <a href="#faq">FAQ</a>
+        <nav className="site-nav" aria-label="Primary">
+          <a className="nav-link" href="#spotlight">
+            Spotlight
+          </a>
+          <a className="nav-link" href="#tech-stack">
+            Tech Stack
+          </a>
+          <NavItem id="industries" label="Industries" href="#industries" />
+          <NavItem id="solutions" label="Solutions" href="#capabilities" />
+          <NavItem id="company" label="Company" href="#who-we-are" />
+          <NavItem id="resources" label="Resources" href="#case-studies" />
+          <a className="nav-link" href="#faq">
+            FAQ
+          </a>
         </nav>
 
         <a className="header-cta" href="#contact">
