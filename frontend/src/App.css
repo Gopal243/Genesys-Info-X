@@ -1305,7 +1305,10 @@
     grid-template-columns: 1fr auto;
   }
 
-  .spotlight-grid,
+  .spotlight-grid {
+    grid-template-columns: 1fr;
+  }
+
   .industry-grid {
     grid-template-columns: 1fr;
   }
