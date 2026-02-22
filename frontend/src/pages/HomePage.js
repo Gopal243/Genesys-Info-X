@@ -61,16 +61,16 @@ function SiteHeader({ variant = "light" }) {
         </button>
 
         <nav className="site-nav">
-          <a href="/#spotlight">Spotlight</a>
-          <a href="/#tech-stack">Tech Stack</a>
-          <a href="/#industries">Industries</a>
-          <a href="/#who-we-are">Who we are</a>
-          <a href="/#capabilities">Capabilities</a>
-          <a href="/#case-studies">Case Studies</a>
-          <a href="/#faq">FAQ</a>
+          <a href="#spotlight">Spotlight</a>
+          <a href="#tech-stack">Tech Stack</a>
+          <a href="#industries">Industries</a>
+          <a href="#who-we-are">Who we are</a>
+          <a href="#capabilities">Capabilities</a>
+          <a href="#case-studies">Case Studies</a>
+          <a href="#faq">FAQ</a>
         </nav>
 
-        <a className="header-cta" href="/#contact">
+        <a className="header-cta" href="#contact">
           Talk to an Expert <span aria-hidden>→</span>
         </a>
       </div>
