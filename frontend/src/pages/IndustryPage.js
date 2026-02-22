@@ -38,7 +38,7 @@ export default function IndustryPage({
       <main className="industry-page" id="top">
         <section className="industry-hero">
           <div className="industry-hero-bg">
-            <video autoPlay muted loop playsInline preload="metadata">
+            <video autoPlay muted loop playsInline preload="none">
               <source src={videoUrl} type="video/mp4" />
             </video>
             <div className="industry-hero-overlay" />
@@ -73,7 +73,7 @@ export default function IndustryPage({
 
         <section className="section has-video-bg">
           <div className="section-video-bg" aria-hidden>
-            <video autoPlay muted loop playsInline preload="metadata">
+            <video autoPlay muted loop playsInline preload="none">
               <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4" type="video/mp4" />
             </video>
             <div className="section-video-overlay" />

@@ -625,6 +625,20 @@
 /* Stack */
 
 /* Industry page ambient photo watermark */
+.page-home::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: url("https://customer-assets.emergentagent.com/job_cinematic-web-17/artifacts/3v7eszuf_ChatGPT%20Image%20Feb%2019%2C%202026%2C%2001_31_19%20PM.png");
+  background-repeat: no-repeat;
+  background-size: min(760px, 70vw) auto;
+  background-position: 80% 24%;
+  opacity: 0.035;
+  transform: rotate(-6deg);
+  mix-blend-mode: screen;
+}
+
 .page-industry::before {
   content: "";
   position: fixed;

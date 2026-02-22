@@ -90,7 +90,7 @@ function Hero() {
       <div className="hero-bg">
         <video className="hero-video" autoPlay muted loop playsInline preload="metadata">
           <source
-            src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4"
+            src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4"
             type="video/mp4"
           />
         </video>
@@ -184,7 +184,7 @@ function Spotlight() {
             <Reveal key={item.title} delay={0.08 + idx * 0.06}>
               <a className={`spotlight-card accent-${item.accent}`} href="#contact">
                 <div className="spotlight-media">
-                  <video autoPlay muted loop playsInline preload="metadata">
+                  <video autoPlay muted loop playsInline preload="none">
                     <source src={item.video} type="video/mp4" />
                   </video>
                   <div className="spotlight-scrim" />
@@ -304,7 +304,7 @@ function TechStack() {
   return (
     <section className="section has-video-bg" id="tech-stack">
       <div className="section-video-bg" aria-hidden>
-        <video autoPlay muted loop playsInline preload="metadata">
+        <video autoPlay muted loop playsInline preload="none">
           <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4" type="video/mp4" />
         </video>
         <div className="section-video-overlay" />
@@ -363,7 +363,7 @@ function Exclusives() {
   return (
     <section className="section has-video-bg" id="exclusives">
       <div className="section-video-bg" aria-hidden>
-        <video autoPlay muted loop playsInline preload="metadata">
+        <video autoPlay muted loop playsInline preload="none">
           <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4" type="video/mp4" />
         </video>
         <div className="section-video-overlay" />
@@ -407,7 +407,7 @@ function WhoWeAre() {
   return (
     <section className="section has-video-bg" id="who-we-are">
       <div className="section-video-bg" aria-hidden>
-        <video autoPlay muted loop playsInline preload="metadata">
+        <video autoPlay muted loop playsInline preload="none">
           <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4" type="video/mp4" />
         </video>
         <div className="section-video-overlay" />
@@ -489,7 +489,7 @@ function Strength() {
   return (
     <section className="section has-video-bg" id="strength">
       <div className="section-video-bg" aria-hidden>
-        <video autoPlay muted loop playsInline preload="metadata">
+        <video autoPlay muted loop playsInline preload="none">
           <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4" type="video/mp4" />
         </video>
         <div className="section-video-overlay" />
@@ -588,7 +588,7 @@ function Capabilities() {
   return (
     <section className="section has-video-bg" id="capabilities">
       <div className="section-video-bg" aria-hidden>
-        <video autoPlay muted loop playsInline preload="metadata">
+        <video autoPlay muted loop playsInline preload="none">
           <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4" type="video/mp4" />
         </video>
         <div className="section-video-overlay" />
@@ -629,7 +629,7 @@ function CaseStudies() {
   return (
     <section className="section has-video-bg" id="case-studies">
       <div className="section-video-bg" aria-hidden>
-        <video autoPlay muted loop playsInline preload="metadata">
+        <video autoPlay muted loop playsInline preload="none">
           <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4" type="video/mp4" />
         </video>
         <div className="section-video-overlay" />
@@ -678,7 +678,7 @@ function FAQ() {
   return (
     <section className="section has-video-bg" id="faq">
       <div className="section-video-bg" aria-hidden>
-        <video autoPlay muted loop playsInline preload="metadata">
+        <video autoPlay muted loop playsInline preload="none">
           <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4" type="video/mp4" />
         </video>
         <div className="section-video-overlay" />
@@ -727,7 +727,7 @@ function Newsletter() {
   return (
     <section className="section has-video-bg" id="newsletter">
       <div className="section-video-bg" aria-hidden>
-        <video autoPlay muted loop playsInline preload="metadata">
+        <video autoPlay muted loop playsInline preload="none">
           <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" type="video/mp4" />
         </video>
         <div className="section-video-overlay" />
@@ -799,7 +799,7 @@ function Contact() {
   return (
     <section className="section has-video-bg" id="contact">
       <div className="section-video-bg" aria-hidden>
-        <video autoPlay muted loop playsInline preload="metadata">
+        <video autoPlay muted loop playsInline preload="none">
           <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" type="video/mp4" />
         </video>
         <div className="section-video-overlay" />
