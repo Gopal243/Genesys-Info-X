@@ -138,6 +138,9 @@
 ##         - working: "NA"
 ##           agent: "main"
 ##           comment: "Addressed video loading failures reported by testing: removed ForBiggerFun.mp4, switched hero to ForBiggerJoyrides.mp4, and changed all <video> to preload=none to reduce browser aborts. Added additional watermark/ambient layers on home + industry pages. Needs retest for video loading + no ERR_ABORTED."
+##         - working: "NA"
+##           agent: "main"
+##           comment: "Replaced random remote background videos with locally hosted themed Mixkit MP4 loops (downloaded into /frontend/public/media): hero-tech.mp4 + tech.mp4 + healthcare.mp4 + semiconductors.mp4. Wired hero/spotlight/industry pages and multiple section backgrounds to these themed loops. Improved 'Specialized solutions across three priority sectors' cards UI by adding top banner images and better card layout."
 ##         - working: true
 ##           agent: "testing"
 ##           comment: "RE-TESTING AFTER VIDEO FIXES COMPLETED ✅ MAJOR IMPROVEMENTS CONFIRMED: 1) Hero video now correctly uses ForBiggerJoyrides.mp4 (not ForBiggerFun) as requested. 2) All section background videos (tech-stack, exclusives, who-we-are, strength, capabilities, case-studies, faq, newsletter, contact) are properly configured with Google Cloud Storage URLs. 3) All industry pages (/technology, /healthcare, /semiconductors) load successfully with both hero and section background videos present. 4) Blissberg and Genesys Green X logos and outbound links are working correctly in exclusives section. 5) No ERR_ABORTED errors or console errors detected. ⚠️ NOTE: Videos use preload='none' attribute which prevents automatic loading - this is intentional to reduce bandwidth and avoid ERR_ABORTED errors. Videos will load when user interaction triggers them. The implementation successfully addresses all the reported video loading issues."
