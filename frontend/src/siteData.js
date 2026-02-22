@@ -41,4 +41,9 @@ export const PAGE_IMAGES = {
   },
 };
 
- 
+export const INDUSTRY_VIDEOS = {
+  hero: "/media/hero-tech.mp4",
+  technology: "/media/tech.mp4",
+  healthcare: "/media/healthcare.mp4",
+  semiconductors: "/media/semiconductors.mp4",
+};
