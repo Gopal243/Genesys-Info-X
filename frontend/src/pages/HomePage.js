@@ -930,6 +930,34 @@ function Capabilities() {
       title: "Product Engineering",
       desc: "From MVP to enterprise rollout—iterative delivery with predictable quality.",
     },
+    {
+      title: "Integration & APIs",
+      desc: "Clean interfaces and dependable integrations between enterprise systems.",
+    },
+    {
+      title: "DevOps & CI/CD",
+      desc: "Automated pipelines, environments, and release governance for speed.",
+    },
+    {
+      title: "Observability & Monitoring",
+      desc: "Logs, metrics, tracing, alerts—production clarity without noise.",
+    },
+    {
+      title: "QA Automation",
+      desc: "Regression suites and quality gates that protect velocity.",
+    },
+    {
+      title: "UX Engineering",
+      desc: "Enterprise UX patterns with modern motion and accessible components.",
+    },
+    {
+      title: "Data Engineering",
+      desc: "Pipelines, warehousing, and governance for trusted data products.",
+    },
+    {
+      title: "Enterprise Migration",
+      desc: "Modernize legacy systems with minimal downtime and clear rollbacks.",
+    },
   ];
 
   return (
