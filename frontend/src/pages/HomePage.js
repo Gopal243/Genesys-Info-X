@@ -676,7 +676,7 @@ function FAQ() {
   ];
 
   return (
-    <section className="section" id="faq">
+    <section className="section has-video-bg" id="faq">
       <div className="container">
         <Reveal>
           <div className="section-kicker">FAQ</div>
