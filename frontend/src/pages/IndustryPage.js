@@ -18,7 +18,7 @@ function PageHeader({ title }) {
         <div className="page-title-chip">{title}</div>
         <Link className="header-cta" to="/#contact">
           Talk to an Expert <span aria-hidden>→</span>
-        </a>
+        </Link>
       </div>
     </header>
   );
