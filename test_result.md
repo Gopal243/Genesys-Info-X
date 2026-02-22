@@ -101,7 +101,7 @@
 #====================================================================================================
 # Testing Data - Main Agent and testing sub agent both should log testing data below this section
 #====================================================================================================
-## user_problem_statement: "Clone https://genesys-showcase.preview.emergentagent.com/ look & feel (layout, theme, copy) onto the existing Genesys Info X site; include section videos; apply same design system to Technology/Healthcare/Semiconductors pages."
+## user_problem_statement: "Clone https://cinematic-enterprise.preview.emergentagent.com/ look & feel (layout, theme, copy) onto the existing Genesys Info X site; include section videos; apply same design system to Technology/Healthcare/Semiconductors pages."
 ## frontend:
 ##   - task: "Reference showcase clone (homepage + vertical pages)"
 ##     implemented: true
