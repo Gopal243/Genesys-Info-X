@@ -16,7 +16,7 @@ function PageHeader({ title }) {
           </div>
         </Link>
         <div className="page-title-chip">{title}</div>
-        <a className="header-cta" href="/#contact">
+        <a className="header-cta" href="#contact">
           Talk to an Expert <span aria-hidden>→</span>
         </a>
       </div>
