@@ -169,7 +169,7 @@ function Spotlight() {
         <div className="spotlight-grid">
           {items.map((item, idx) => (
             <Reveal key={item.title} delay={0.08 + idx * 0.06}>
-              <a className={`spotlight-card accent-${item.accent}`} href="/#contact">
+              <a className={`spotlight-card accent-${item.accent}`} href="#contact">
                 <div className="spotlight-media">
                   <video autoPlay muted loop playsInline preload="metadata">
                     <source src={item.video} type="video/mp4" />
