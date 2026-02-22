@@ -16,7 +16,7 @@ function PageHeader({ title }) {
           </div>
         </Link>
         <div className="page-title-chip">{title}</div>
-        <a className="header-cta" href="#contact">
+        <Link className="header-cta" to="/#contact">
           Talk to an Expert <span aria-hidden>→</span>
         </a>
       </div>
@@ -60,9 +60,9 @@ export default function IndustryPage({
               {lede}
             </motion.p>
             <div className="hero-actions">
-              <a className="btn btn-primary" href="#contact">
+              <Link className="btn btn-primary" to="/#contact">
                 Book a Consultation <span aria-hidden>→</span>
-              </a>
+              </Link>
               <Link className="btn btn-secondary" to="/">
                 Back to Home
               </Link>
