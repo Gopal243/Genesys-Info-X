@@ -789,7 +789,9 @@ function SiteFooter() {
     <footer className="site-footer">
       <div className="container footer-grid">
         <div className="footer-brand">
-          <img src={LOGO_URL} className="footer-logo" alt="Genesys Info X" />
+          <div className="footer-logo-badge">
+            <img src={LOGO_URL} className="footer-logo" alt="Genesys Info X" />
+          </div>
           <div className="footer-tag">Driving innovation through collaboration.</div>
         </div>
 

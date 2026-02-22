@@ -19,8 +19,23 @@
 
 .page {
   min-height: 100vh;
-  background: var(--bg);
+  background: radial-gradient(1200px 700px at 30% 20%, rgba(244, 197, 66, 0.10), transparent 60%),
+    radial-gradient(1200px 700px at 85% 35%, rgba(57, 217, 138, 0.10), transparent 62%),
+    var(--bg);
   color: var(--text);
+  position: relative;
+}
+
+.page::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(rgba(255, 255, 255, 0.10) 1px, transparent 1px);
+  background-size: 160px 160px;
+  opacity: 0.06;
+  mix-blend-mode: screen;
 }
 
 .container {
@@ -213,7 +228,7 @@
   height: 100%;
   object-fit: cover;
   filter: contrast(1.05) saturate(0.95);
-  opacity: 0.22;
+  opacity: 0.24;
 }
 
 .hero-overlay {
@@ -227,9 +242,11 @@
   position: absolute;
   inset: -40px;
   background:
-    radial-gradient(600px 600px at 15% 50%, rgba(244, 197, 66, 0.20), transparent 60%),
-    radial-gradient(700px 700px at 85% 55%, rgba(57, 217, 138, 0.22), transparent 62%);
-  filter: blur(20px);
+    radial-gradient(600px 600px at 15% 50%, rgba(244, 197, 66, 0.22), transparent 60%),
+    radial-gradient(700px 700px at 85% 55%, rgba(57, 217, 138, 0.24), transparent 62%),
+    radial-gradient(rgba(255, 255, 255, 0.12) 1px, transparent 1px);
+  background-size: auto, auto, 170px 170px;
+  filter: blur(18px);
   opacity: 1;
 }
 
@@ -901,11 +918,20 @@
   gap: 18px;
 }
 
-.footer-logo {
-  height: 44px;
-  width: auto;
-  filter: brightness(0) invert(1);
+.footer-logo-badge {
+  width: 54px;
+  height: 54px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.92);
+  display: grid;
+  place-items: center;
   margin-bottom: 10px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+}
+
+.footer-logo {
+  height: 36px;
+  width: auto;
 }
 
 .footer-tag {
