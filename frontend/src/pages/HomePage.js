@@ -195,14 +195,6 @@ function Industries() {
             deliver more with less friction.
           </p>
         </Reveal>
-        <Reveal>
-          <div className="section-kicker">WHO WE SERVE</div>
-          <h2 className="section-title">Specialized solutions across three priority sectors</h2>
-          <p className="section-lede">
-            A focused portfolio—built for speed, compliance, and performance—so your teams can
-            deliver more with less friction.
-          </p>
-        </Reveal>
 
         <div className="industry-grid">
           {cards.map((c, idx) => (
