@@ -16,9 +16,7 @@ const BLISSBERG_LOGO_URL =
 const GREENX_LOGO_URL =
   "https://customer-assets.emergentagent.com/job_cinematic-web-17/artifacts/2powj3mv_ChatGPT%20Image%20Feb%2019%2C%202026%2C%2006_03_38%20PM.png";
 
-function HomeHeader() {
-  return <SiteHeader variant="dark" logoUrl={LOGO_URL} industryImages={INDUSTRY_IMAGES} />;
-}
+ 
 
 function Hero() {
   return (
