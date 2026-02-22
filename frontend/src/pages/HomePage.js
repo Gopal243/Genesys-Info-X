@@ -725,7 +725,7 @@ function Newsletter() {
   };
 
   return (
-    <section className="section" id="newsletter">
+    <section className="section has-video-bg" id="newsletter">
       <div className="container">
         <div className="newsletter">
           <Reveal>
