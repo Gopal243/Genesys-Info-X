@@ -269,42 +269,12 @@ function HomeHeader() {
   );
 
   return (
-    <header className={`${baseClass} ${scrolled ? "scrolled" : ""}`}>
-      <div className="site-header-inner">
-        <button
-          className="brand"
-          onClick={() => navigate("/")}
-          aria-label="Genesys Info X"
-        >
-          <img className="brand-logo" src={LOGO_URL} alt="Genesys Info X" />
-          <div className="brand-text">
-            <div className="brand-title">Genesys Info X</div>
-            <div className="brand-sub">Technology • Healthcare • Semiconductors</div>
-          </div>
-        </button>
-
-        <nav className="site-nav" aria-label="Primary">
-          <a className="nav-link" href="#spotlight">
-            Spotlight
-          </a>
-          <a className="nav-link" href="#tech-stack">
-            Tech Stack
-          </a>
-          <NavItem id="industries" label="Industries" href="#industries" />
-          <NavItem id="solutions" label="Solutions" href="#capabilities" />
-          <NavItem id="company" label="Company" href="#who-we-are" />
-          <NavItem id="resources" label="Resources" href="#case-studies" />
-          <a className="nav-link" href="#faq">
-            FAQ
-          </a>
-        </nav>
-
-        <a className="header-cta" href="#contact">
-          Talk to an Expert <span aria-hidden>→</span>
-        </a>
-      </div>
-    </header>
+    <SiteHeader variant="dark" logoUrl={LOGO_URL} industryImages={INDUSTRY_IMAGES} />
   );
+}
+
+function SiteHeaderWrapper() {
+  return <HomeHeader />;
 }
 
 function Hero() {
