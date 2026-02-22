@@ -2,8 +2,8 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 
 const sectionFade = {
-  hidden: { opacity: 0, y: 24 },
-  show: { opacity: 1, y: 0 },
+  hidden: { opacity: 0, y: 30, filter: "blur(6px)", scale: 0.985 },
+  show: { opacity: 1, y: 0, filter: "blur(0px)", scale: 1 },
 };
 
 export default function Reveal({ children, delay = 0, once = true }) {
@@ -16,7 +16,13 @@ export default function Reveal({ children, delay = 0, once = true }) {
       variants={sectionFade}
       initial="hidden"
       animate={inView ? "show" : "hidden"}
-      transition={{ duration: 0.7, delay, ease: [0.22, 1, 0.36, 1] }}
+      transition={{
+        type: "spring",
+        stiffness: 260,
+        damping: 28,
+        mass: 0.9,
+        delay,
+      }}
     >
       {children}
     </motion.div>
