@@ -184,7 +184,7 @@ function Spotlight() {
   );
 
   return (
-    <section className="section" id="spotlight">
+    <section className="section has-video-bg" id="spotlight">
       <div className="section-video-bg" aria-hidden>
         <video autoPlay muted loop playsInline preload="none">
           <source src={INDUSTRY_VIDEOS.technology} type="video/mp4" />
