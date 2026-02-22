@@ -1052,6 +1052,22 @@ function FAQ() {
       q: "How do we start a project?",
       a: "Send a note through the contact form. We’ll schedule a discovery call, align on goals, and propose a clear delivery plan.",
     },
+    {
+      q: "What is your typical engagement model?",
+      a: "We align on scope and outcomes first, then operate with a milestone-based delivery rhythm and clear KPIs.",
+    },
+    {
+      q: "Do you handle security and compliance?",
+      a: "Yes. We embed security-by-design practices, governance, and documentation into delivery and release cycles.",
+    },
+    {
+      q: "Can you work with our internal teams?",
+      a: "Absolutely. We collaborate with product, engineering, and operations stakeholders through clear communication and ownership.",
+    },
+    {
+      q: "Do you offer ongoing support after launch?",
+      a: "Yes. We can provide platform operations, monitoring, and iterative enhancements post-release.",
+    },
   ];
 
   return (
