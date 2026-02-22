@@ -102,23 +102,25 @@ export default function IndustryPage({
             },
           ];
 
+  const pageImages = PAGE_IMAGES[pageKey] || PAGE_IMAGES.technology;
+
   const useCases =
     pageKey === "healthcare"
       ? [
           {
             title: "Billing Workflow Automation",
             desc: "Reduce cycle time with structured automation.",
-            image: INDUSTRY_IMAGES.healthcare,
+            image: pageImages.useCase1,
           },
           {
             title: "Claims & Coding Analytics",
             desc: "Improve visibility and accuracy with dashboards.",
-            image: INDUSTRY_IMAGES.technology,
+            image: pageImages.useCase2,
           },
           {
             title: "Care Team Interfaces",
             desc: "Modern UX for daily operational efficiency.",
-            image: INDUSTRY_IMAGES.healthcare,
+            image: pageImages.useCase3,
           },
         ]
       : pageKey === "semiconductors"
@@ -126,34 +128,34 @@ export default function IndustryPage({
             {
               title: "Yield & Test Dashboards",
               desc: "Operational dashboards for engineering outcomes.",
-              image: INDUSTRY_IMAGES.semiconductors,
+              image: pageImages.useCase1,
             },
             {
               title: "Reliability Programs",
               desc: "Process tooling for critical validation cycles.",
-              image: INDUSTRY_IMAGES.technology,
+              image: pageImages.useCase2,
             },
             {
               title: "Performance Workflows",
               desc: "Systems designed for speed and stability.",
-              image: INDUSTRY_IMAGES.semiconductors,
+              image: pageImages.useCase3,
             },
           ]
         : [
             {
               title: "Data Platform Modernization",
               desc: "Scale pipelines and improve system clarity.",
-              image: INDUSTRY_IMAGES.technology,
+              image: pageImages.useCase1,
             },
             {
               title: "AI-enabled Operations",
               desc: "Automation that is measurable and reliable.",
-              image: INDUSTRY_IMAGES.technology,
+              image: pageImages.useCase2,
             },
             {
               title: "Security Governance",
               desc: "Guardrails that improve delivery speed.",
-              image: INDUSTRY_IMAGES.semiconductors,
+              image: pageImages.useCase3,
             },
           ];
 
