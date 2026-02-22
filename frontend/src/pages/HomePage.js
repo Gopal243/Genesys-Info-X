@@ -17,7 +17,7 @@ const sectionFade = {
 
 function Reveal({ children, delay = 0 }) {
   const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: "-100px" });
+  const inView = useInView(ref, { once: true, margin: "-120px" });
 
   return (
     <motion.div
