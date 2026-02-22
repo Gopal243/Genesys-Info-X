@@ -135,6 +135,9 @@
 ##         - working: false
 ##           agent: "testing"
 ##           comment: "MEDIA/ANIMATION UPDATE TESTING RESULTS: ❌ CRITICAL VIDEO LOADING ISSUES FOUND: Hero background video (ForBiggerFun.mp4) and multiple section background videos from Google Cloud Storage are failing to load with net::ERR_ABORTED errors. ✅ STRUCTURE & EXCLUSIVES WORKING: Exclusives section correctly displays Blissberg and Genesys Green X logos with proper outbound links (https://blissbergsemi.com/ and https://www.genesysgreenx.com/). All industry pages (/technology, /healthcare, /semiconductors) maintain correct structure with hero sections and content areas. Multiple sections have proper has-video-bg classes and overlay elements for readability. ❌ MAIN ISSUE: Video assets are not loading, breaking the visual experience that relies on background videos for ambiance and hero sections."
+##         - working: "NA"
+##           agent: "main"
+##           comment: "Addressed video loading failures reported by testing: removed ForBiggerFun.mp4, switched hero to ForBiggerJoyrides.mp4, and changed all <video> to preload=none to reduce browser aborts. Added additional watermark/ambient layers on home + industry pages. Needs retest for video loading + no ERR_ABORTED."
 ## metadata:
 ##   created_by: "main_agent"
 ##   version: "1.0"
