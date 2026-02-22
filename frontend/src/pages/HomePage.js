@@ -258,7 +258,13 @@ function Industries() {
   ];
 
   return (
-    <section className="section" id="industries">
+    <section className="section has-video-bg" id="industries">
+      <div className="section-video-bg" aria-hidden>
+        <video autoPlay muted loop playsInline preload="none">
+          <source src={INDUSTRY_VIDEOS.semiconductors} type="video/mp4" />
+        </video>
+        <div className="section-video-overlay" />
+      </div>
       <div className="container">
         <Reveal>
           <div className="section-kicker">WHO WE SERVE</div>
