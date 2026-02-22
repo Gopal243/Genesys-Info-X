@@ -34,7 +34,7 @@ export default function IndustryPage({
   return (
     <div className="page">
       <PageHeader title={title} />
-      <main className="industry-page">
+      <main className="industry-page" id="top">
         <section className="industry-hero">
           <div className="industry-hero-bg">
             <video autoPlay muted loop playsInline preload="metadata">
