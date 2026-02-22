@@ -628,6 +628,12 @@ function CaseStudies() {
 
   return (
     <section className="section has-video-bg" id="case-studies">
+      <div className="section-video-bg" aria-hidden>
+        <video autoPlay muted loop playsInline preload="metadata">
+          <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4" type="video/mp4" />
+        </video>
+        <div className="section-video-overlay" />
+      </div>
       <div className="container">
         <Reveal>
           <div className="section-kicker">RECENT PROJECTS</div>
