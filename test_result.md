@@ -138,6 +138,9 @@
 ##         - working: "NA"
 ##           agent: "main"
 ##           comment: "Addressed video loading failures reported by testing: removed ForBiggerFun.mp4, switched hero to ForBiggerJoyrides.mp4, and changed all <video> to preload=none to reduce browser aborts. Added additional watermark/ambient layers on home + industry pages. Needs retest for video loading + no ERR_ABORTED."
+##         - working: true
+##           agent: "main"
+##           comment: "Updated Exclusives logos: removed white background, increased logo size, and switched to a fully floating logo style (no border container) per user preference."
 ##         - working: "NA"
 ##           agent: "main"
 ##           comment: "Replaced random remote background videos with locally hosted themed Mixkit MP4 loops (downloaded into /frontend/public/media): hero-tech.mp4 + tech.mp4 + healthcare.mp4 + semiconductors.mp4. Wired hero/spotlight/industry pages and multiple section backgrounds to these themed loops. Improved 'Specialized solutions across three priority sectors' cards UI by adding top banner images and better card layout."
