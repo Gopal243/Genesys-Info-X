@@ -173,6 +173,10 @@ export default function IndustryPage({
 
       <main className="industry-page" id="top">
         <section className="industry-hero">
+          <div className="industry-hero-photo" aria-hidden>
+            <img src={pageImages.cover} alt="" loading="lazy" />
+            <div className="industry-hero-photo-scrim" />
+          </div>
           <div className="industry-hero-bg">
             <video autoPlay muted loop playsInline preload="none">
               <source src={videoUrl} type="video/mp4" />
