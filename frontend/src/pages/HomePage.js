@@ -997,8 +997,12 @@ function CaseStudies() {
   const items = [
     { title: "App for Health", tag: "Development" },
     { title: "UX Design for Tubus", tag: "Development" },
-    { title: "Analysis of Security", tag: "Marketing" },
+    { title: "Analysis of Security", tag: "Security" },
     { title: "Responsive Design", tag: "Optimization" },
+    { title: "Cloud Cost Optimization", tag: "Cloud" },
+    { title: "RCM Workflow Automation", tag: "Healthcare" },
+    { title: "Semiconductor Test Analytics", tag: "Semiconductors" },
+    { title: "Enterprise Data Dashboards", tag: "Data" },
   ];
 
   return (
