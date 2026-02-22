@@ -22,7 +22,7 @@
 ##     file: "file_path.py"
 ##     stuck_count: 0
 ##     priority: "high"  # or "medium" or "low"
-##     needs_retesting: true
+##     needs_retesting: false
 ##     status_history:
 ##         -working: true  # or false or "NA"
 ##         -agent: "main"  # or "testing" or "user"
