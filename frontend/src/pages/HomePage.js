@@ -627,7 +627,7 @@ function CaseStudies() {
   ];
 
   return (
-    <section className="section" id="case-studies">
+    <section className="section has-video-bg" id="case-studies">
       <div className="container">
         <Reveal>
           <div className="section-kicker">RECENT PROJECTS</div>
