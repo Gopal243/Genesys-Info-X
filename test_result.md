@@ -105,15 +105,18 @@
 ## frontend:
 ##   - task: "Reference showcase clone (homepage + vertical pages)"
 ##     implemented: true
-##     working: "NA"
+##     working: false
 ##     file: "frontend/src/pages/HomePage.js + frontend/src/pages/*Page.js + frontend/src/App.css"
-##     stuck_count: 0
+##     stuck_count: 1
 ##     priority: "high"
-##     needs_retesting: true
+##     needs_retesting: false
 ##     status_history:
 ##         - working: "NA"
 ##           agent: "main"
-##           comment: "Rebuilt app routing; created HomePage and IndustryPage template; matched reference section structure & copy; added autoplay muted loop videos in hero + spotlight cards + industry page hero; restyled App.css to dark enterprise glass panels; updated index.css to not override theme. Needs e2e verification of nav hash scrolling, card hover, forms POST /api/contact, and page routes." 
+##           comment: "Rebuilt app routing; created HomePage and IndustryPage template; matched reference section structure & copy; added autoplay muted loop videos in hero + spotlight cards + industry page hero; restyled App.css to dark enterprise glass panels; updated index.css to not override theme. Needs e2e verification of nav hash scrolling, card hover, forms POST /api/contact, and page routes."
+##         - working: false
+##           agent: "testing"
+##           comment: "CRITICAL ISSUE: All Pixabay video URLs return 404 errors (hero video + 3 spotlight videos + 3 industry page videos). This breaks the visual experience. WORKING: Dark enterprise theme renders correctly, header navigation scrolls to sections (6/7 work), industry pages load with proper routing (/technology, /healthcare, /semiconductors), back-to-home navigation works, contact form submits successfully to /api/contact, newsletter subscription works. The core functionality is solid but video assets need replacement." 
 ## metadata:
 ##   created_by: "main_agent"
 ##   version: "1.0"
