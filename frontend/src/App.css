@@ -408,6 +408,21 @@
   font-size: 13px;
   padding: 10px 16px;
   border-radius: 999px;
+
+.btn-ghost {
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: transparent;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.btn-ghost:hover {
+  transform: translateY(-2px);
+  border-color: rgba(57, 217, 138, 0.28);
+}
+
+.hero-actions-rich {
+  gap: 12px;
+}
   display: inline-flex;
   align-items: center;
   gap: 10px;

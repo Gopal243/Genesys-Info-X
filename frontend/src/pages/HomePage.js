@@ -440,12 +440,15 @@ function Hero() {
         </Reveal>
 
         <Reveal delay={0.2}>
-          <div className="hero-actions">
+          <div className="hero-actions hero-actions-rich">
             <a className="btn btn-primary" href="#contact">
               Book a Consultation <span aria-hidden>→</span>
             </a>
             <a className="btn btn-secondary" href="#capabilities">
               Explore Capabilities
+            </a>
+            <a className="btn btn-ghost" href="#case-studies">
+              View Case Studies
             </a>
           </div>
         </Reveal>
