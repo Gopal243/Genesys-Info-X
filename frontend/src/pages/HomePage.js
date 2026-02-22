@@ -32,7 +32,11 @@ function Hero() {
 
       <div className="hero-inner">
         <Reveal>
-          <img className="hero-logo-large" src={LOGO_URL} alt="Genesys Info X logo" />
+          <div className="hero-logo-premium" aria-label="Genesys Info X">
+            <div className="hero-logo-glow" aria-hidden />
+            <img className="hero-logo-large" src={LOGO_URL} alt="Genesys Info X logo" />
+            <div className="hero-logo-sweep" aria-hidden />
+          </div>
         </Reveal>
         <Reveal delay={0.03}>
           <div className="hero-pill">Global IT Development & Consulting</div>

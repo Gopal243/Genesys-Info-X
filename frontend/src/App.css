@@ -418,6 +418,79 @@
 }
 
 .hero-actions-rich {
+
+/* Premium hero logo effect (one-time sweep + hover tilt) */
+.hero-logo-premium {
+  position: relative;
+  width: fit-content;
+  margin: 0 auto;
+  transform-style: preserve-3d;
+  perspective: 900px;
+}
+
+.hero-logo-premium::after {
+  content: "";
+  position: absolute;
+  inset: -22px;
+  border-radius: 28px;
+  background: radial-gradient(closest-side, rgba(57, 217, 138, 0.10), transparent 70%),
+    radial-gradient(closest-side, rgba(244, 197, 66, 0.08), transparent 68%);
+  filter: blur(10px);
+  opacity: 1;
+  pointer-events: none;
+}
+
+.hero-logo-glow {
+  position: absolute;
+  inset: -22px;
+  border-radius: 28px;
+  background: radial-gradient(closest-side, rgba(57, 217, 138, 0.18), transparent 72%),
+    radial-gradient(closest-side, rgba(244, 197, 66, 0.12), transparent 70%);
+  filter: blur(14px);
+  opacity: 0.7;
+  pointer-events: none;
+  transform: translateZ(-1px);
+}
+
+.hero-logo-sweep {
+  position: absolute;
+  inset: -18px;
+  border-radius: 28px;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.00) 38%,
+    rgba(255, 255, 255, 0.50) 50%,
+    rgba(255, 255, 255, 0.00) 62%,
+    transparent 100%
+  );
+  mix-blend-mode: screen;
+  filter: blur(0.2px);
+  transform: translateX(-140%) skewX(-12deg);
+  animation: logo-sweep 1.25s cubic-bezier(0.22, 1, 0.36, 1) 0.25s forwards;
+  pointer-events: none;
+}
+
+@keyframes logo-sweep {
+  to {
+    transform: translateX(140%) skewX(-12deg);
+  }
+}
+
+.hero-logo-premium:hover {
+  transform: rotateX(6deg) rotateY(-8deg) translateY(-2px);
+}
+
+.hero-logo-premium:hover .hero-logo-glow {
+  opacity: 1;
+}
+
+.hero-logo-premium .hero-logo-large {
+  position: relative;
+  z-index: 2;
+  filter: drop-shadow(0 22px 70px rgba(0, 0, 0, 0.65));
+}
+
   gap: 12px;
 }
   display: inline-flex;
