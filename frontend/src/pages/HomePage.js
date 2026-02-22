@@ -100,6 +100,9 @@ function Hero() {
           <div className="hero-pill">Global IT Development & Consulting</div>
         </Reveal>
 
+        {/* Keep the big hero logo as the primary heading visual */}
+        {/* Reference site includes text headings; keeping them commented to avoid duplication */}
+        {/*
         <Reveal delay={0.05}>
           <h1 className="hero-title">Genesys Info X</h1>
         </Reveal>
@@ -107,6 +110,7 @@ function Hero() {
         <Reveal delay={0.1}>
           <p className="hero-subtitle">Engineering Innovation Across</p>
         </Reveal>
+        */}
 
         <Reveal delay={0.15}>
           <div className="hero-tags">
