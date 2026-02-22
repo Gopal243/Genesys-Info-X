@@ -361,7 +361,13 @@ function Exclusives() {
   ];
 
   return (
-    <section className="section" id="exclusives">
+    <section className="section has-video-bg" id="exclusives">
+      <div className="section-video-bg" aria-hidden>
+        <video autoPlay muted loop playsInline preload="metadata">
+          <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4" type="video/mp4" />
+        </video>
+        <div className="section-video-overlay" />
+      </div>
       <div className="container">
         <Reveal>
           <div className="section-kicker">OUR EXCLUSIVES</div>
@@ -399,7 +405,13 @@ function Exclusives() {
 
 function WhoWeAre() {
   return (
-    <section className="section" id="who-we-are">
+    <section className="section has-video-bg" id="who-we-are">
+      <div className="section-video-bg" aria-hidden>
+        <video autoPlay muted loop playsInline preload="metadata">
+          <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4" type="video/mp4" />
+        </video>
+        <div className="section-video-overlay" />
+      </div>
       <div className="container">
         <div className="split">
           <Reveal>
@@ -755,7 +767,13 @@ function Contact() {
   };
 
   return (
-    <section className="section" id="contact">
+    <section className="section has-video-bg" id="contact">
+      <div className="section-video-bg" aria-hidden>
+        <video autoPlay muted loop playsInline preload="metadata">
+          <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" type="video/mp4" />
+        </video>
+        <div className="section-video-overlay" />
+      </div>
       <div className="container">
         <div className="contact">
           <Reveal>
@@ -886,7 +904,7 @@ function EmergentBadge() {
 
 export default function HomePage() {
   return (
-    <div className="page">
+    <div className="page page-home">
       <SiteHeader variant="light" />
       <main>
         <Hero />
