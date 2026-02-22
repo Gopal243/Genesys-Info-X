@@ -337,6 +337,10 @@
   min-height: 210px;
 }
 
+.mega-feature:hover .mega-feature-img {
+  transform: scale(1.12);
+}
+
 .mega-feature-img {
   position: absolute;
   inset: 0;
