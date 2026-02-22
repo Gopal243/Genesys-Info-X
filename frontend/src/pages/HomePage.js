@@ -954,7 +954,7 @@ function EmergentBadge() {
 export default function HomePage() {
   return (
     <div className="page page-home">
-      <SiteHeader variant="light" />
+      <SiteHeader variant="dark" logoUrl={LOGO_URL} industryImages={INDUSTRY_IMAGES} />
       <main>
         <Hero />
         <Spotlight />
