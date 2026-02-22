@@ -487,7 +487,7 @@ function Strength() {
   ];
 
   return (
-    <section className="section" id="strength">
+    <section className="section has-video-bg" id="strength">
       <div className="container">
         <Reveal>
           <div className="section-kicker">OUR STRENGTH</div>
