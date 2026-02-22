@@ -30,9 +30,10 @@ export default function IndustryPage({
   bullets,
   videoUrl,
   related,
+  pageKey,
 }) {
   return (
-    <div className="page">
+    <div className={`page page-industry ${pageKey ? `page-${pageKey}` : ""}`}>
       <PageHeader title={title} />
       <main className="industry-page" id="top">
         <section className="industry-hero">
@@ -70,7 +71,7 @@ export default function IndustryPage({
           </div>
         </section>
 
-        <section className="section">
+        <section className="section has-video-bg">
           <div className="container">
             <div className="split">
               <div>

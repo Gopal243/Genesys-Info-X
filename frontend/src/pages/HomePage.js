@@ -10,6 +10,12 @@ const API = `${BACKEND_URL}/api`;
 const LOGO_URL =
   "https://customer-assets.emergentagent.com/job_cinematic-web-17/artifacts/3v7eszuf_ChatGPT%20Image%20Feb%2019%2C%202026%2C%2001_31_19%20PM.png";
 
+const BLISSBERG_LOGO_URL =
+  "https://customer-assets.emergentagent.com/job_cinematic-web-17/artifacts/9u4bvmg9_BLISSBERG_logo_transparent.png";
+
+const GREENX_LOGO_URL =
+  "https://customer-assets.emergentagent.com/job_cinematic-web-17/artifacts/m34rv4on_ChatGPT%20Image%20Feb%2019%2C%202026%2C%2006_03_38%20PM.png";
+
 const sectionFade = {
   hidden: { opacity: 0, y: 24 },
   show: { opacity: 1, y: 0 },
@@ -84,7 +90,7 @@ function Hero() {
       <div className="hero-bg">
         <video className="hero-video" autoPlay muted loop playsInline preload="metadata">
           <source
-            src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
+            src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4"
             type="video/mp4"
           />
         </video>
@@ -296,7 +302,13 @@ function TechStack() {
   ];
 
   return (
-    <section className="section" id="tech-stack">
+    <section className="section has-video-bg" id="tech-stack">
+      <div className="section-video-bg" aria-hidden>
+        <video autoPlay muted loop playsInline preload="metadata">
+          <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4" type="video/mp4" />
+        </video>
+        <div className="section-video-overlay" />
+      </div>
       <div className="container">
         <Reveal>
           <div className="section-kicker">TECHNOLOGY STACK</div>
@@ -337,12 +349,14 @@ function Exclusives() {
       title: "Blissberg",
       desc:
         "Premium semiconductor solutions and engineering excellence for next-generation technology.",
-      href: "#",
+      href: "https://blissbergsemi.com/",
+      logo: BLISSBERG_LOGO_URL,
     },
     {
       title: "Genesys Green X",
       desc: "Sustainable energy solutions and green technology innovation for a cleaner future.",
-      href: "#",
+      href: "https://www.genesysgreenx.com/",
+      logo: GREENX_LOGO_URL,
     },
   ];
 
@@ -363,8 +377,13 @@ function Exclusives() {
             <Reveal key={c.title} delay={0.06 + idx * 0.06}>
               <div className="exclusive-card">
                 <div className="exclusive-top">
-                  <h3>{c.title}</h3>
-                  <a className="visit" href={c.href}>
+                  <div className="exclusive-brand">
+                    <div className="exclusive-logo-wrap">
+                      <img src={c.logo} alt={`${c.title} logo`} className="exclusive-logo" />
+                    </div>
+                    <h3>{c.title}</h3>
+                  </div>
+                  <a className="visit" href={c.href} target="_blank" rel="noreferrer">
                     Visit Website
                   </a>
                 </div>
