@@ -101,3 +101,30 @@
 #====================================================================================================
 # Testing Data - Main Agent and testing sub agent both should log testing data below this section
 #====================================================================================================
+## user_problem_statement: "Clone https://genesys-showcase.preview.emergentagent.com/ look & feel (layout, theme, copy) onto the existing Genesys Info X site; include section videos; apply same design system to Technology/Healthcare/Semiconductors pages."
+## frontend:
+##   - task: "Reference showcase clone (homepage + vertical pages)"
+##     implemented: true
+##     working: "NA"
+##     file: "frontend/src/pages/HomePage.js + frontend/src/pages/*Page.js + frontend/src/App.css"
+##     stuck_count: 0
+##     priority: "high"
+##     needs_retesting: true
+##     status_history:
+##         - working: "NA"
+##           agent: "main"
+##           comment: "Rebuilt app routing; created HomePage and IndustryPage template; matched reference section structure & copy; added autoplay muted loop videos in hero + spotlight cards + industry page hero; restyled App.css to dark enterprise glass panels; updated index.css to not override theme. Needs e2e verification of nav hash scrolling, card hover, forms POST /api/contact, and page routes." 
+## metadata:
+##   created_by: "main_agent"
+##   version: "1.0"
+##   test_sequence: 1
+##   run_ui: true
+## test_plan:
+##   current_focus:
+##     - "Reference showcase clone (homepage + vertical pages)"
+##   stuck_tasks: []
+##   test_all: false
+##   test_priority: "high_first"
+## agent_communication:
+##     - agent: "main"
+##       message: "Please run Playwright e2e on homepage + /technology,/healthcare,/semiconductors. Verify header nav anchors scroll to sections, video elements load, hover interactions, newsletter + contact forms submit (POST /api/contact), and no console errors."
