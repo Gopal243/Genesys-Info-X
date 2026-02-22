@@ -217,6 +217,7 @@
   display: grid;
   place-items: center;
   overflow: hidden;
+  scroll-margin-top: 92px;
 }
 
 .hero-bg {
