@@ -662,18 +662,8 @@
     drop-shadow(0 12px 35px rgba(57, 217, 138, 0.25));
 }
 
-  gap: 12px;
-}
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  box-shadow: 0 12px 26px rgba(57, 217, 138, 0.28);
-  transition: transform 180ms ease, filter 180ms ease;
-}
-
-.header-cta:hover {
-  transform: translateY(-1px);
-  filter: brightness(1.02);
+.hero-actions-rich {
+  gap: 14px;
 }
 
 .page-title-chip {
