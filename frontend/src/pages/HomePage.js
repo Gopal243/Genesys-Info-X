@@ -16,6 +16,22 @@ const BLISSBERG_LOGO_URL =
 const GREENX_LOGO_URL =
   "https://customer-assets.emergentagent.com/job_cinematic-web-17/artifacts/m34rv4on_ChatGPT%20Image%20Feb%2019%2C%202026%2C%2006_03_38%20PM.png";
 
+const INDUSTRY_IMAGES = {
+  technology:
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Datacenter_Server_Racks_%2822370909788%29.jpg/1280px-Datacenter_Server_Racks_%2822370909788%29.jpg",
+  healthcare:
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Doctors_using_transparent_tablet_with_hologram_medical_technology_%2850812636116%29.jpg/1280px-Doctors_using_transparent_tablet_with_hologram_medical_technology_%2850812636116%29.jpg",
+  semiconductors:
+    "https://upload.wikimedia.org/wikipedia/commons/4/47/Computer_chips_circuits_boards.jpg",
+};
+
+const INDUSTRY_VIDEOS = {
+  hero: "/media/hero-tech.mp4",
+  technology: "/media/tech.mp4",
+  healthcare: "/media/healthcare.mp4",
+  semiconductors: "/media/semiconductors.mp4",
+};
+
 const sectionFade = {
   hidden: { opacity: 0, y: 24 },
   show: { opacity: 1, y: 0 },
@@ -90,7 +106,7 @@ function Hero() {
       <div className="hero-bg">
         <video className="hero-video" autoPlay muted loop playsInline preload="none">
           <source
-            src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4"
+            src={INDUSTRY_VIDEOS.hero}
             type="video/mp4"
           />
         </video>
@@ -148,19 +164,19 @@ function Spotlight() {
         title: "AI-driven Operations",
         desc:
           "Automate the repetitive. Elevate the critical. Ship intelligence with reliability.",
-        video: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
+        video: INDUSTRY_VIDEOS.technology,
         accent: "yellow",
       },
       {
         title: "Healthcare Systems",
         desc: "RCM workflows, billing, coding, analytics, and compliance-ready delivery.",
-        video: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
+        video: INDUSTRY_VIDEOS.healthcare,
         accent: "green",
       },
       {
         title: "Semiconductor Platforms",
         desc: "Performance, safety, and scale—built for high-stakes engineering.",
-        video: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4",
+        video: INDUSTRY_VIDEOS.semiconductors,
         accent: "yellow",
       },
     ],
@@ -209,23 +225,29 @@ function Spotlight() {
 function Industries() {
   const cards = [
     {
+      key: "technology",
       title: "Technology",
       desc: "AI, blockchain, cloud, and IoT solutions that accelerate digital transformation.",
       to: "/technology",
       icon: "chip",
+      image: INDUSTRY_IMAGES.technology,
     },
     {
+      key: "healthcare",
       title: "Healthcare",
       desc:
         "End-to-end services from medical billing & coding to AI-driven diagnostics and RCM.",
       to: "/healthcare",
       icon: "heart",
+      image: INDUSTRY_IMAGES.healthcare,
     },
     {
+      key: "semiconductors",
       title: "Semiconductors",
       desc: "Cutting-edge solutions for automotive performance, safety, and reliability.",
       to: "/semiconductors",
       icon: "stack",
+      image: INDUSTRY_IMAGES.semiconductors,
     },
   ];
 
@@ -244,7 +266,11 @@ function Industries() {
         <div className="industry-grid">
           {cards.map((c, idx) => (
             <Reveal key={c.title} delay={0.06 + idx * 0.06}>
-              <Link to={c.to} className="industry-card">
+              <Link to={c.to} className="industry-card industry-card-rich">
+                <div className="industry-media" aria-hidden>
+                  <img src={c.image} alt="" loading="lazy" />
+                  <div className="industry-media-scrim" />
+                </div>
                 <div className="industry-card-top">
                   <h3>{c.title}</h3>
                   <span className={`industry-icon ${c.icon}`} aria-hidden />
