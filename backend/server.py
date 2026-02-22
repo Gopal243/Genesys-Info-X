@@ -61,11 +61,13 @@ async def create_status_check(input: StatusCheckCreate):
     return status_obj
 
 @api_router.get("/status", response_model=List[StatusCheck])
-async def get_status_checks():
-    status_checks = await db.status_checks.find({}, {"_id": 0}).to_list(1000)
+async def get_status_checks(skip: int = 0, limit: int = 100):
+    # Explicit field projection for required fields only
+    projection = {"_id": 0, "id": 1, "client_name": 1, "timestamp": 1}
+    status_checks = await db.status_checks.find({}, projection).skip(skip).limit(min(limit, 100)).to_list(min(limit, 100))
     
     for check in status_checks:
-        if isinstance(check['timestamp'], str):
+        if isinstance(check.get('timestamp'), str):
             check['timestamp'] = datetime.fromisoformat(check['timestamp'])
     
     return status_checks
@@ -82,11 +84,13 @@ async def create_contact_message(input: ContactMessageCreate):
     return contact_obj
 
 @api_router.get("/contact", response_model=List[ContactMessage])
-async def get_contact_messages():
-    messages = await db.contact_messages.find({}, {"_id": 0}).to_list(1000)
+async def get_contact_messages(skip: int = 0, limit: int = 100):
+    # Explicit field projection for required fields only
+    projection = {"_id": 0, "id": 1, "email": 1, "message": 1, "timestamp": 1}
+    messages = await db.contact_messages.find({}, projection).skip(skip).limit(min(limit, 100)).to_list(min(limit, 100))
     
     for msg in messages:
-        if isinstance(msg['timestamp'], str):
+        if isinstance(msg.get('timestamp'), str):
             msg['timestamp'] = datetime.fromisoformat(msg['timestamp'])
     
     return messages
