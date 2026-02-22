@@ -1,14 +1,14 @@
-import { useEffect, useMemo, useRef, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { motion, useInView } from "framer-motion";
+import { useMemo, useState } from "react";
+import { Link } from "react-router-dom";
 import CountUp from "react-countup";
 import axios from "axios";
 
+import Reveal from "../components/Reveal";
+import SiteHeader from "../components/SiteHeader";
+import { INDUSTRY_IMAGES, INDUSTRY_VIDEOS, LOGO_URL } from "../siteData";
+
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 const API = `${BACKEND_URL}/api`;
-
-const LOGO_URL =
-  "https://customer-assets.emergentagent.com/job_cinematic-web-17/artifacts/3v7eszuf_ChatGPT%20Image%20Feb%2019%2C%202026%2C%2001_31_19%20PM.png";
 
 const BLISSBERG_LOGO_URL =
   "https://customer-assets.emergentagent.com/job_cinematic-web-17/artifacts/gf4jpk1d_BLISSBERG_logo_transparent.png";
@@ -16,97 +16,7 @@ const BLISSBERG_LOGO_URL =
 const GREENX_LOGO_URL =
   "https://customer-assets.emergentagent.com/job_cinematic-web-17/artifacts/2powj3mv_ChatGPT%20Image%20Feb%2019%2C%202026%2C%2006_03_38%20PM.png";
 
-const INDUSTRY_IMAGES = {
-  technology:
-    "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Datacenter_Server_Racks_%2822370909788%29.jpg/1280px-Datacenter_Server_Racks_%2822370909788%29.jpg",
-  healthcare:
-    "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Doctors_using_transparent_tablet_with_hologram_medical_technology_%2850812636116%29.jpg/1280px-Doctors_using_transparent_tablet_with_hologram_medical_technology_%2850812636116%29.jpg",
-  semiconductors:
-    "https://upload.wikimedia.org/wikipedia/commons/4/47/Computer_chips_circuits_boards.jpg",
-};
-
-const INDUSTRY_VIDEOS = {
-  hero: "/media/hero-tech.mp4",
-  technology: "/media/tech.mp4",
-  healthcare: "/media/healthcare.mp4",
-  semiconductors: "/media/semiconductors.mp4",
-};
-
-const sectionFade = {
-  hidden: { opacity: 0, y: 24 },
-  show: { opacity: 1, y: 0 },
-};
-
-function Reveal({ children, delay = 0 }) {
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: "-120px" });
-
-  return (
-    <motion.div
-      ref={ref}
-      variants={sectionFade}
-      initial="hidden"
-      animate={inView ? "show" : "hidden"}
-      transition={{ duration: 0.7, delay, ease: [0.22, 1, 0.36, 1] }}
-    >
-      {children}
-    </motion.div>
-  );
-}
-
-function MegaMenu({ open, title, href, sections, featured }) {
-  if (!open) return null;
-
-  return (
-    <motion.div
-      className="mega"
-      initial={{ opacity: 0, y: 8 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: 8 }}
-      transition={{ duration: 0.18, ease: [0.22, 1, 0.36, 1] }}
-      role="menu"
-      aria-label={`${title} menu`}
-    >
-      <div className="mega-head">
-        <div className="mega-title">{title}</div>
-        <a className="mega-link" href={href}>
-          View section →
-        </a>
-      </div>
-
-      <div className="mega-grid">
-        <div className="mega-cols">
-          {sections.map((s) => (
-            <div key={s.title} className="mega-col">
-              <div className="mega-col-title">{s.title}</div>
-              <div className="mega-items">
-                {s.items.map((it) => (
-                  <a key={it.label} className="mega-item" href={it.href}>
-                    <div className="mega-item-label">{it.label}</div>
-                    <div className="mega-item-desc">{it.desc}</div>
-                  </a>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-
-        <a className="mega-feature" href={featured.href}>
-          <img className="mega-feature-img" src={featured.image} alt="" loading="lazy" />
-          <div className="mega-feature-overlay" />
-          <div className="mega-feature-body">
-            <div className="mega-feature-kicker">{featured.kicker}</div>
-            <div className="mega-feature-title">{featured.title}</div>
-            <div className="mega-feature-desc">{featured.desc}</div>
-            <div className="mega-feature-cta">{featured.cta} →</div>
-          </div>
-        </a>
-      </div>
-    </motion.div>
-  );
-}
-
-function SiteHeader({ variant = "light" }) {
+function HomeHeader() {
   const navigate = useNavigate();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(null);
