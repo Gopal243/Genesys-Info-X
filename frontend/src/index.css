@@ -12,6 +12,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 100px;
 }
 
 body {
@@ -22,6 +23,38 @@ body {
   background: var(--bg);
   color: var(--text);
   overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* Premium selection styling */
+::selection {
+  background: rgba(57, 217, 138, 0.30);
+  color: #fff;
+}
+
+::-moz-selection {
+  background: rgba(57, 217, 138, 0.30);
+  color: #fff;
+}
+
+/* Premium scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, rgba(57, 217, 138, 0.4), rgba(57, 217, 138, 0.2));
+  border-radius: 10px;
+  border: 2px solid rgba(0, 0, 0, 0.3);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, rgba(57, 217, 138, 0.6), rgba(57, 217, 138, 0.3));
 }
 
 code {
