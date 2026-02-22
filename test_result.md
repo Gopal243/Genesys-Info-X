@@ -131,3 +131,5 @@
 ## agent_communication:
 ##     - agent: "main"
 ##       message: "Please run Playwright e2e on homepage + /technology,/healthcare,/semiconductors. Verify header nav anchors scroll to sections, video elements load, hover interactions, newsletter + contact forms submit (POST /api/contact), and no console errors."
+##     - agent: "testing"
+##       message: "TESTING COMPLETED - Found critical video loading issues but core functionality works. All Pixabay video URLs return 404 errors. Header navigation works (6/7 sections scroll correctly). Industry pages load properly with hero videos and back-to-home navigation. Contact and newsletter forms submit successfully to /api/contact endpoint. Dark enterprise theme renders correctly. Need to fix video URLs for full functionality."
