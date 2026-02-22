@@ -677,6 +677,12 @@ function FAQ() {
 
   return (
     <section className="section has-video-bg" id="faq">
+      <div className="section-video-bg" aria-hidden>
+        <video autoPlay muted loop playsInline preload="metadata">
+          <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4" type="video/mp4" />
+        </video>
+        <div className="section-video-overlay" />
+      </div>
       <div className="container">
         <Reveal>
           <div className="section-kicker">FAQ</div>
