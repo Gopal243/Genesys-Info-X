@@ -117,6 +117,9 @@
 ##         - working: false
 ##           agent: "testing"
 ##           comment: "CRITICAL ISSUE: All Pixabay video URLs return 404 errors (hero video + 3 spotlight videos + 3 industry page videos). This breaks the visual experience. WORKING: Dark enterprise theme renders correctly, header navigation scrolls to sections (6/7 work), industry pages load with proper routing (/technology, /healthcare, /semiconductors), back-to-home navigation works, contact form submits successfully to /api/contact, newsletter subscription works. The core functionality is solid but video assets need replacement." 
+##         - working: "NA"
+##           agent: "main"
+##           comment: "Fixed broken video sources by swapping Pixabay/Pexels URLs (403/404 due to hotlink protection) to public commondatastorage.googleapis.com MP4s (ForBiggerBlazes/Escapes/Joyrides/Meltdowns). Also improved anchor scroll positioning via scroll-margin-top on .section + .hero and fixed Reveal margin slightly. Fixed invalid closing tag on IndustryPage header CTA. Needs retest to confirm videos load + nav anchors behave."
 ## metadata:
 ##   created_by: "main_agent"
 ##   version: "1.0"
