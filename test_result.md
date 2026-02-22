@@ -109,7 +109,7 @@
 ##     file: "frontend/src/pages/HomePage.js + frontend/src/pages/*Page.js + frontend/src/App.css"
 ##     stuck_count: 1
 ##     priority: "high"
-##     needs_retesting: false
+##     needs_retesting: true
 ##     status_history:
 ##         - working: "NA"
 ##           agent: "main"
