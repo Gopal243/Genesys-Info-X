@@ -819,6 +819,18 @@ function Strength() {
       title: "Future‑Proof Systems",
       desc: "Architectures designed to evolve—so your stack stays ahead of change.",
     },
+    {
+      title: "Enterprise Governance",
+      desc: "Clear documentation, approvals, and traceable delivery across milestones.",
+    },
+    {
+      title: "Reliable Delivery Cadence",
+      desc: "Sprint rituals, quality gates, and production readiness from day one.",
+    },
+    {
+      title: "Client‑Ready Communication",
+      desc: "Status updates, risk registers, and stakeholder alignment built-in.",
+    },
   ];
 
   return (
