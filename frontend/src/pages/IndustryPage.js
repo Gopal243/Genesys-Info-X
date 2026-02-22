@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 import { motion } from "framer-motion";
@@ -168,8 +169,16 @@ export default function IndustryPage({
     { title: "Optimize", desc: "Iterate with KPIs and continuous improvement." },
   ];
 
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   return (
-    <div className={`page page-industry ${pageKey ? `page-${pageKey}` : ""}`}>
+    <div
+      className={`page page-industry ${mounted ? "industry-mounted" : ""} ${pageKey ? `page-${pageKey}` : ""}`}
+    >
       <SiteHeader variant="dark" logoUrl={LOGO_URL} industryImages={INDUSTRY_IMAGES} />
 
       <main className="industry-page" id="top">
