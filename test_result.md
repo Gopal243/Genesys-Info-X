@@ -105,7 +105,7 @@
 ## frontend:
 ##   - task: "Reference showcase clone (homepage + vertical pages)"
 ##     implemented: true
-##     working: "NA"
+##     working: true
 ##     file: "frontend/src/pages/HomePage.js + frontend/src/pages/*Page.js + frontend/src/App.css"
 ##     stuck_count: 1
 ##     priority: "high"
