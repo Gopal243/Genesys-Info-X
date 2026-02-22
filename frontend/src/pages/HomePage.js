@@ -726,6 +726,12 @@ function Newsletter() {
 
   return (
     <section className="section has-video-bg" id="newsletter">
+      <div className="section-video-bg" aria-hidden>
+        <video autoPlay muted loop playsInline preload="metadata">
+          <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" type="video/mp4" />
+        </video>
+        <div className="section-video-overlay" />
+      </div>
       <div className="container">
         <div className="newsletter">
           <Reveal>
