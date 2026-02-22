@@ -3,6 +3,7 @@ import IndustryPage from "./IndustryPage";
 export default function SemiconductorPage() {
   return (
     <IndustryPage
+      pageKey="semiconductors"
       title="Semiconductors"
       lede="Cutting-edge solutions for automotive performance, safety, and reliability."
       bullets={[

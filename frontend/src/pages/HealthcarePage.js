@@ -3,6 +3,7 @@ import IndustryPage from "./IndustryPage";
 export default function HealthcarePage() {
   return (
     <IndustryPage
+      pageKey="healthcare"
       title="Healthcare"
       lede="End-to-end services from medical billing & coding to AI-driven diagnostics and RCM."
       bullets={[

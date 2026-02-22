@@ -3,6 +3,7 @@ import IndustryPage from "./IndustryPage";
 export default function TechnologyPage() {
   return (
     <IndustryPage
+      pageKey="technology"
       title="Technology"
       lede="AI, blockchain, cloud, and IoT solutions that accelerate digital transformation."
       bullets={[
