@@ -88,7 +88,7 @@ function Hero() {
   return (
     <section className="hero" id="top">
       <div className="hero-bg">
-        <video className="hero-video" autoPlay muted loop playsInline preload="metadata">
+        <video className="hero-video" autoPlay muted loop playsInline preload="none">
           <source
             src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4"
             type="video/mp4"
