@@ -60,7 +60,7 @@ export default function IndustryPage({
               {lede}
             </motion.p>
             <div className="hero-actions">
-              <a className="btn btn-primary" href="/#contact">
+              <a className="btn btn-primary" href="#contact">
                 Book a Consultation <span aria-hidden>→</span>
               </a>
               <Link className="btn btn-secondary" to="/">
