@@ -125,6 +125,9 @@
 ##           comment: "COMPREHENSIVE TESTING COMPLETED - ALL MAJOR ISSUES RESOLVED! ✅ Hero video loads from Google Cloud Storage (no longer Pixabay) with autoplay/muted/loop attributes. ✅ All 3 spotlight videos load from Google Cloud Storage with proper attributes. ✅ All 7 header navigation anchors work correctly (Spotlight, Tech Stack, Industries, Who we are, Capabilities, Case Studies, FAQ). ✅ All 3 industry pages (/technology, /healthcare, /semiconductors) load correctly with Google Cloud Storage hero videos. ✅ All 'Talk to an Expert' CTAs work without console errors. ✅ Newsletter and Contact forms submit successfully to /api/contact. ✅ No console errors or network 404/403 errors found. Minor: Videos appear paused due to browser autoplay policies, but this is expected behavior and doesn't affect functionality."
 ##         - working: true
 ##           agent: "main"
+##           comment: "Per user request, kept structure/copy unchanged; updated hero background video; added section-level background video layers (Tech Stack + multiple other sections + industry page content section), added exclusives logos (Blissberg + Genesys Green X) with outbound links, and added additional subtle ambient animations (hero logo float, spotlight slow zoom, page drift)."
+##         - working: true
+##           agent: "main"
 ##           comment: "Updated logo across site to user-provided PNG and added large hero logo above the 'Global IT Development & Consulting' pill on homepage hero."
 ##         - working: true
 ##           agent: "testing"
