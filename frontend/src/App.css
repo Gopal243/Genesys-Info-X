@@ -40,23 +40,16 @@
 
 
 /* Animated ambient gradient */
-@keyframes drift {
-  0% {
-    transform: translate3d(0, 0, 0) scale(1);
-    filter: hue-rotate(0deg);
-  }
-  50% {
-    transform: translate3d(0, -10px, 0) scale(1.02);
-    filter: hue-rotate(8deg);
-  }
-  100% {
-    transform: translate3d(0, 0, 0) scale(1);
-    filter: hue-rotate(0deg);
+/* Entry-only animations preferred (no constant motion) */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
   }
 }
 
 .page {
-  animation: drift 14s ease-in-out infinite;
+  animation: none;
 }
 .container {
   max-width: 1120px;
