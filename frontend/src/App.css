@@ -46,6 +46,7 @@
 
 .section {
   padding: 88px 0;
+  scroll-margin-top: 92px;
 }
 
 .section-kicker {
