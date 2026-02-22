@@ -8,7 +8,7 @@ const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 const API = `${BACKEND_URL}/api`;
 
 const LOGO_URL =
-  "https://customer-assets.emergentagent.com/job_web-creator-768/artifacts/925qpowk_IMG_9976.jpg";
+  "https://customer-assets.emergentagent.com/job_cinematic-web-17/artifacts/3v7eszuf_ChatGPT%20Image%20Feb%2019%2C%202026%2C%2001_31_19%20PM.png";
 
 const sectionFade = {
   hidden: { opacity: 0, y: 24 },
@@ -94,6 +94,9 @@ function Hero() {
 
       <div className="hero-inner">
         <Reveal>
+          <img className="hero-logo-large" src={LOGO_URL} alt="Genesys Info X logo" />
+        </Reveal>
+        <Reveal delay={0.03}>
           <div className="hero-pill">Global IT Development & Consulting</div>
         </Reveal>
 

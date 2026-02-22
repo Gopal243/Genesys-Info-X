@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
 const LOGO_URL =
-  "https://customer-assets.emergentagent.com/job_web-creator-768/artifacts/925qpowk_IMG_9976.jpg";
+  "https://customer-assets.emergentagent.com/job_cinematic-web-17/artifacts/3v7eszuf_ChatGPT%20Image%20Feb%2019%2C%202026%2C%2001_31_19%20PM.png";
 
 function PageHeader({ title }) {
   return (
