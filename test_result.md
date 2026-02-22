@@ -140,6 +140,9 @@
 ##           comment: "Addressed video loading failures reported by testing: removed ForBiggerFun.mp4, switched hero to ForBiggerJoyrides.mp4, and changed all <video> to preload=none to reduce browser aborts. Added additional watermark/ambient layers on home + industry pages. Needs retest for video loading + no ERR_ABORTED."
 ##         - working: true
 ##           agent: "main"
+##         - working: true
+##           agent: "main"
+##           comment: "Added top nav mega-menu dropdowns (Industries/Solutions/Company/Resources) with rich enterprise content + photo tiles; kept existing anchor links. Expanded content density inside existing sections (Strength + Capabilities + Case studies + FAQ) and added an extra hero CTA button (View Case Studies) with matching animations."
 ##           comment: "Updated Exclusives logos: removed white background, increased logo size, and switched to a fully floating logo style (no border container) per user preference."
 ##         - working: "NA"
 ##           agent: "main"
