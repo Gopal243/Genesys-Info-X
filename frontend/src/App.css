@@ -1786,10 +1786,40 @@
 }
 
 .project-card {
-  border-radius: 18px;
-  border: 1px solid rgba(255, 255, 255, 0.10);
-  background: rgba(255, 255, 255, 0.04);
-  padding: 18px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+  padding: 22px;
+  backdrop-filter: blur(6px);
+  box-shadow: 
+    0 12px 35px rgba(0, 0, 0, 0.30),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  transition: 
+    transform 0.5s var(--transition-premium),
+    border-color 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--green), var(--yellow));
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.project-card:hover::before {
+  opacity: 0.6;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(57, 217, 138, 0.18);
 }
 
 .project-tag {
@@ -1816,11 +1846,29 @@
 }
 
 .faq-item {
-  border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.10);
-  background: rgba(255, 255, 255, 0.04);
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
   padding: 0;
   overflow: hidden;
+  backdrop-filter: blur(6px);
+  box-shadow: 
+    0 8px 25px rgba(0, 0, 0, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  transition: 
+    border-color 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+.faq-item:hover {
+  border-color: rgba(57, 217, 138, 0.15);
+  box-shadow: 
+    0 12px 35px rgba(0, 0, 0, 0.32),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.faq-item[open] {
+  border-color: rgba(57, 217, 138, 0.20);
 }
 
 .faq-item summary {
