@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import { useMemo } from "react";
+
 import { motion } from "framer-motion";
 
 import SiteHeader from "../components/SiteHeader";
