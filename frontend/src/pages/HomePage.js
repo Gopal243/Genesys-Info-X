@@ -914,7 +914,6 @@ function SiteFooter() {
       <div className="footer-bottom">
         <div className="container footer-bottom-inner">
           <div>© 2026 Genesys Info X. All rights reserved.</div>
-          <div className="made">Made with Emergent</div>
         </div>
       </div>
     </footer>
@@ -944,15 +943,6 @@ function TopButton() {
   );
 }
 
-function EmergentBadge() {
-  return (
-    <div className="emergent-badge" aria-hidden>
-      <span className="emergent-dot" />
-      Made with Emergent
-    </div>
-  );
-}
-
 export default function HomePage() {
   return (
     <div className="page page-home">
@@ -974,7 +964,6 @@ export default function HomePage() {
       </main>
       <SiteFooter />
       <TopButton />
-      <EmergentBadge />
     </div>
   );
 }
