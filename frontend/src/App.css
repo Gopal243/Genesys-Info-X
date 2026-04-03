@@ -2388,3 +2388,372 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* ========================================
+   MOBILE RESPONSIVE STYLES (max-width: 768px)
+   ======================================== */
+@media (max-width: 768px) {
+  /* Header Mobile */
+  .site-header-inner {
+    padding: 12px 16px;
+  }
+
+  .brand-logo {
+    width: 36px;
+    height: 36px;
+  }
+
+  .brand-title {
+    font-size: 14px;
+  }
+
+  .brand-sub {
+    font-size: 9px;
+  }
+
+  .header-cta {
+    padding: 8px 14px;
+    font-size: 11px;
+    gap: 6px;
+  }
+
+  .header-cta span {
+    display: none;
+  }
+
+  /* Hero Mobile */
+  .hero {
+    min-height: 85vh;
+    padding-top: 80px;
+  }
+
+  .hero-inner {
+    padding: 0 16px;
+  }
+
+  .hero-logo-large {
+    max-width: 180px !important;
+    height: auto !important;
+  }
+
+  .hero-logo-premium::before {
+    inset: -30px;
+    filter: blur(25px);
+  }
+
+  .hero-logo-premium::after {
+    inset: -15px;
+  }
+
+  .hero-logo-glow {
+    inset: -18px;
+    filter: blur(12px);
+  }
+
+  .hero-pill {
+    padding: 8px 14px;
+    font-size: 11px;
+    margin-bottom: 16px;
+  }
+
+  .hero-title {
+    font-size: clamp(32px, 8vw, 48px);
+    margin-bottom: 10px;
+  }
+
+  .hero-subtitle {
+    font-size: 14px;
+    margin-bottom: 16px;
+    padding: 0 10px;
+  }
+
+  .hero-tags {
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+
+  .tag {
+    padding: 6px 12px;
+    font-size: 11px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Sections Mobile */
+  .section {
+    padding: 50px 0;
+  }
+
+  .container {
+    padding: 0 16px;
+  }
+
+  .section-kicker {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    margin-bottom: 12px;
+  }
+
+  .section-title {
+    font-size: clamp(24px, 6vw, 32px);
+    margin-bottom: 12px;
+  }
+
+  .section-lede {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  /* Cards Mobile */
+  .spotlight-card {
+    min-height: 200px;
+    border-radius: 18px;
+  }
+
+  .spotlight-body {
+    padding: 16px;
+  }
+
+  .spotlight-body h3 {
+    font-size: 18px;
+  }
+
+  .spotlight-body p {
+    font-size: 13px;
+  }
+
+  .industry-card {
+    padding: 16px;
+    border-radius: 16px;
+  }
+
+  .industry-card h3 {
+    font-size: 18px;
+  }
+
+  .industry-card p {
+    font-size: 13px;
+  }
+
+  .info-card,
+  .stack-card,
+  .cap-card,
+  .project-card,
+  .exclusive-card,
+  .mission-card {
+    padding: 16px;
+    border-radius: 16px;
+  }
+
+  /* Stats Mobile */
+  .stats {
+    padding: 16px;
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .stat {
+    padding: 14px;
+  }
+
+  .stat-value {
+    font-size: 22px;
+  }
+
+  .stat-label {
+    font-size: 11px;
+  }
+
+  /* Grids Mobile */
+  .stack-grid,
+  .cap-grid,
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .exclusive-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* FAQ Mobile */
+  .faq-item summary {
+    padding: 14px 16px;
+    font-size: 14px;
+  }
+
+  .faq-item p {
+    padding: 0 16px 14px;
+    font-size: 13px;
+  }
+
+  /* Forms Mobile */
+  .newsletter-form,
+  .contact-form {
+    gap: 12px;
+  }
+
+  .newsletter-form input,
+  .contact-form input,
+  .contact-form textarea {
+    padding: 12px 14px;
+    font-size: 14px;
+  }
+
+  .newsletter-form button,
+  .contact-form button {
+    padding: 12px 20px;
+    font-size: 13px;
+  }
+
+  /* Footer Mobile */
+  .site-footer {
+    padding: 24px 0 0;
+  }
+
+  .footer-grid {
+    gap: 24px;
+    text-align: center;
+  }
+
+  .footer-brand {
+    align-items: center;
+  }
+
+  .footer-col h4 {
+    font-size: 13px;
+    margin-bottom: 12px;
+  }
+
+  .footer-col a {
+    font-size: 13px;
+  }
+
+  .footer-bottom {
+    padding: 16px;
+    font-size: 12px;
+  }
+
+  .footer-bottom-inner {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+
+  /* Partner Logos Mobile */
+  .partner-logos {
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .partner-logos img {
+    max-height: 40px;
+  }
+
+  /* Industry Page Mobile */
+  .industry-hero {
+    min-height: 50vh;
+  }
+
+  .industry-hero-title {
+    font-size: clamp(28px, 7vw, 42px);
+  }
+
+  .industry-hero-lede {
+    font-size: 14px;
+  }
+
+  .industry-hero-inner {
+    padding-bottom: 30px;
+  }
+
+  /* Buttons Mobile */
+  .btn {
+    padding: 12px 18px;
+    font-size: 12px;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Top Button Mobile */
+  .top-btn {
+    right: 12px;
+    bottom: 12px;
+    width: 44px;
+    height: 44px;
+    font-size: 18px;
+  }
+}
+
+/* ========================================
+   SMALL MOBILE STYLES (max-width: 480px)
+   ======================================== */
+@media (max-width: 480px) {
+  .hero-logo-large {
+    max-width: 140px !important;
+  }
+
+  .hero-title {
+    font-size: clamp(26px, 9vw, 36px);
+  }
+
+  .hero-subtitle {
+    font-size: 13px;
+  }
+
+  .section-title {
+    font-size: clamp(20px, 6vw, 26px);
+  }
+
+  .section-lede {
+    font-size: 13px;
+  }
+
+  .brand {
+    gap: 8px;
+  }
+
+  .brand-logo {
+    width: 32px;
+    height: 32px;
+  }
+
+  .brand-title {
+    font-size: 13px;
+  }
+
+  .brand-sub {
+    font-size: 8px;
+    display: none;
+  }
+
+  .header-cta {
+    padding: 6px 12px;
+    font-size: 10px;
+  }
+
+  .mega {
+    width: calc(100vw - 32px);
+    left: 16px;
+    right: 16px;
+  }
+
+  .industry-hero-title {
+    font-size: clamp(24px, 8vw, 32px);
+  }
+}
