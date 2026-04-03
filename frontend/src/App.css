@@ -2243,29 +2243,6 @@
   cursor: pointer;
 }
 
-.emergent-badge {
-  position: fixed;
-  right: 18px;
-  bottom: 18px;
-  z-index: 1100;
-  border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.10);
-  background: rgba(0, 0, 0, 0.55);
-  color: rgba(255, 255, 255, 0.75);
-  padding: 10px 12px;
-  display: inline-flex;
-  gap: 10px;
-  align-items: center;
-  pointer-events: none;
-}
-
-.emergent-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.9);
-}
-
 /* Industry pages */
 .industry-page {
   padding-top: 72px;
