@@ -905,8 +905,24 @@ function SiteFooter() {
           </a>
           <div style={{ height: 10 }} />
           <div className="footer-label">Phone</div>
-          <a className="footer-link" href="tel:+9109667749156">
-            +91 096677 49156
+          <a className="footer-link" href="tel:+916309357756">
+            +91 6309357756
+          </a>
+        </div>
+
+        <div className="footer-col">
+          <div className="footer-label">HR Contact</div>
+          <a className="footer-link" href="mailto:hr@genesysinfox.com">
+            hr@genesysinfox.com
+          </a>
+          <br />
+          <a className="footer-link" href="mailto:hr@genesysinfox.in">
+            hr@genesysinfox.in
+          </a>
+          <div style={{ height: 10 }} />
+          <div className="footer-label">Careers</div>
+          <a className="footer-link" href="mailto:careers@genesysinfox.com">
+            careers@genesysinfox.com
           </a>
         </div>
       </div>
