@@ -4,11 +4,13 @@ from starlette.middleware.cors import CORSMiddleware
 from motor.motor_asyncio import AsyncIOMotorClient
 import os
 import logging
+import asyncio
 from pathlib import Path
 from pydantic import BaseModel, Field, ConfigDict, EmailStr
 from typing import List
 import uuid
 from datetime import datetime, timezone
+import resend
 
 
 ROOT_DIR = Path(__file__).parent
@@ -17,6 +19,10 @@ load_dotenv(ROOT_DIR / '.env')
 mongo_url = os.environ['MONGO_URL']
 client = AsyncIOMotorClient(mongo_url)
 db = client[os.environ['DB_NAME']]
+
+# Resend configuration
+resend.api_key = os.environ.get('RESEND_API_KEY')
+NOTIFICATION_EMAIL = os.environ.get('NOTIFICATION_EMAIL', 'careers.in@genesysinfox.com')
 
 app = FastAPI()
 api_router = APIRouter(prefix="/api")
@@ -81,6 +87,59 @@ async def create_contact_message(input: ContactMessageCreate):
     doc['timestamp'] = doc['timestamp'].isoformat()
     
     _ = await db.contact_messages.insert_one(doc)
+    
+    # Send email notification
+    try:
+        is_newsletter = "Newsletter subscribe:" in input.message
+        
+        if is_newsletter:
+            subject = "New Newsletter Subscription - Genesys Info X"
+            html_content = f"""
+            <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
+                <h2 style="color: #39d98a;">New Newsletter Subscription</h2>
+                <div style="background: #f5f5f5; padding: 20px; border-radius: 8px; margin-top: 20px;">
+                    <p><strong>Email:</strong> {input.email}</p>
+                    <p><strong>Subscribed at:</strong> {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S')} UTC</p>
+                </div>
+                <p style="color: #666; margin-top: 20px; font-size: 12px;">
+                    This notification was sent from Genesys Info X website.
+                </p>
+            </div>
+            """
+        else:
+            subject = "New Contact Form Submission - Genesys Info X"
+            html_content = f"""
+            <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
+                <h2 style="color: #39d98a;">New Contact Form Submission</h2>
+                <div style="background: #f5f5f5; padding: 20px; border-radius: 8px; margin-top: 20px;">
+                    <p><strong>From:</strong> {input.email}</p>
+                    <p><strong>Message:</strong></p>
+                    <p style="background: white; padding: 15px; border-radius: 4px; border-left: 3px solid #39d98a;">
+                        {input.message}
+                    </p>
+                    <p><strong>Received at:</strong> {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S')} UTC</p>
+                </div>
+                <p style="color: #666; margin-top: 20px; font-size: 12px;">
+                    This notification was sent from Genesys Info X website.
+                </p>
+            </div>
+            """
+        
+        params = {
+            "from": "Genesys Info X <onboarding@resend.dev>",
+            "to": [NOTIFICATION_EMAIL],
+            "subject": subject,
+            "html": html_content,
+            "reply_to": input.email
+        }
+        
+        await asyncio.to_thread(resend.Emails.send, params)
+        logger.info(f"Email notification sent to {NOTIFICATION_EMAIL} for {'newsletter' if is_newsletter else 'contact'} from {input.email}")
+        
+    except Exception as e:
+        logger.error(f"Failed to send email notification: {str(e)}")
+        # Don't fail the request if email fails, the data is already saved
+    
     return contact_obj
 
 @api_router.get("/contact", response_model=List[ContactMessage])
