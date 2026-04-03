@@ -921,8 +921,8 @@ function SiteFooter() {
           </a>
           <div style={{ height: 10 }} />
           <div className="footer-label">Careers</div>
-          <a className="footer-link" href="mailto:careers@genesysinfox.com">
-            careers@genesysinfox.com
+          <a className="footer-link" href="mailto:careers.in@genesysinfox.com">
+            careers.in@genesysinfox.com
           </a>
         </div>
       </div>
